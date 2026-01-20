@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Picture
+  - Amulet
   layers:
   - Default
   - TransparentFX

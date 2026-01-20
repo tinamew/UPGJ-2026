@@ -7,7 +7,7 @@ public class Interaction : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Left click
+        if (Input.GetMouseButtonDown(0))
         {
             TryInteract();
         }
@@ -25,6 +25,10 @@ public class Interaction : MonoBehaviour
             {
                 CameraMovement.instance.CameraOnPhoto();
                 Debug.Log("Clicked picture");
+            }
+            if (hit.collider.CompareTag("Amulet"))
+            {
+                UIManager.instance.OpenSpells();
             }
         }
     }

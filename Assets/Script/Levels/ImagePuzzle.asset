@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd187bf5711a3734d8f80f8547461502, type: 3}
-  m_Name: DamageType
-  m_EditorClassIdentifier: Assembly-CSharp::DamageType
-  typeName: 
+  m_Script: {fileID: 11500000, guid: aa98c13cf80359e45997b3aeb373eecd, type: 3}
+  m_Name: ImagePuzzle
+  m_EditorClassIdentifier: Assembly-CSharp::ImagePuzzle
