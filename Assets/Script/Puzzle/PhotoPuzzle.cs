@@ -5,4 +5,6 @@ public class PhotoPuzzle : ScriptableObject
 {
     public string photoWord;
     public DamageType damageType;
+    public bool wordIsSolved;
+    public bool damageIsSolved;
 }

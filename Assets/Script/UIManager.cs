@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject spellPanel;
     private bool isSpellPanelOpen = false;
 
+    private string damageType;
+
     [Header("Lose Menu")]
     [SerializeField] private GameObject losePanel;
 
@@ -57,5 +59,7 @@ public class UIManager : MonoBehaviour
         losePanel.SetActive(true);
 
     }
+
+   
 
 }
