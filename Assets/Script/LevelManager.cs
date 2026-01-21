@@ -1,31 +1,39 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private List<PhotoPuzzle> photos = new List<PhotoPuzzle>();
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private List<PhotoPuzzle> photos;
+    [SerializeField] private WordPuzzle wordPuzzle;
 
-    private int currentLevel;
-    
+    private int currentLevel = 0;
+
     void Start()
     {
-        
+        wordPuzzle.OnWordSolved += NextLevel;
+        StartLevel();
     }
 
-    // Update is called once per frame
-    void Update()
+    void StartLevel()
     {
-        
-    }
-
-    void NextLevel(int level)
-    {
-        if (photos[currentLevel].PuzzleIsFnished())
+        if (currentLevel >= photos.Count)
         {
-            currentLevel++;
+            Debug.Log("All levels completed!");
+            return;
         }
+
+        wordPuzzle.StartWordPuzzle(photos[currentLevel]);
     }
 
+    void NextLevel()
+    {
+        Debug.Log("Level " + currentLevel + " complete!");
+        currentLevel++;
+        StartLevel();
+    }
+
+    private void OnDestroy()
+    {
+        wordPuzzle.OnWordSolved -= NextLevel;
+    }
 }

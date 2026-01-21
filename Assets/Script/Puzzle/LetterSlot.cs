@@ -7,6 +7,7 @@ public class LetterSlot : MonoBehaviour
 
     public void SetLetter(char c)
     {
+        letterText = letterText.GetComponent<TextMeshProUGUI>();
         letterText.text = c.ToString();
     }
 

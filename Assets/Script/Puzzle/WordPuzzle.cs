@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +7,12 @@ public class WordPuzzle : MonoBehaviour
     public LetterSlot letterSlotPrefab;
     public Transform slotsParent;
 
+    public event Action OnWordSolved;
+
     private string currentWord;
     private List<LetterSlot> slots = new();
-    private int currentIndex = 0;
+    private int currentIndex;
+    private bool solved;
 
     public void StartWordPuzzle(PhotoPuzzle photo)
     {
@@ -16,19 +20,19 @@ public class WordPuzzle : MonoBehaviour
 
         currentWord = photo.photoWord.ToUpper();
         currentIndex = 0;
+        solved = false;
 
-        // Create slots based on word length
         foreach (char c in currentWord)
         {
             LetterSlot slot = Instantiate(letterSlotPrefab, slotsParent);
-            slot.Clear();
+          //  slot.Clear();
             slots.Add(slot);
         }
     }
 
     void Update()
     {
-        if (string.IsNullOrEmpty(currentWord))
+        if (string.IsNullOrEmpty(currentWord) || solved)
             return;
 
         foreach (char c in Input.inputString)
@@ -42,14 +46,16 @@ public class WordPuzzle : MonoBehaviour
                 currentIndex++;
             }
 
-            // Word completed
             if (currentIndex == currentWord.Length)
             {
-                CheckAnswer();
+                if (CheckAnswer())
+                {
+                    solved = true;
+                    OnWordSolved?.Invoke();
+                }
             }
         }
 
-        // Backspace support
         if (Input.GetKeyDown(KeyCode.Backspace) && currentIndex > 0)
         {
             currentIndex--;
@@ -57,21 +63,14 @@ public class WordPuzzle : MonoBehaviour
         }
     }
 
-    void CheckAnswer()
+    public bool CheckAnswer()
     {
         string typedWord = "";
 
         foreach (var slot in slots)
             typedWord += slot.letterText.text;
 
-        if (typedWord == currentWord)
-        {
-            Debug.Log("Correct!");
-        }
-        else
-        {
-            Debug.Log("Wrong!");
-        }
+        return typedWord == currentWord;
     }
 
     void ClearSlots()
