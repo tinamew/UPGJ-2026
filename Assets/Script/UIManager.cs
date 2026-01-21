@@ -1,4 +1,6 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -58,6 +60,11 @@ public class UIManager : MonoBehaviour
     {
         losePanel.SetActive(true);
 
+    }
+
+    public void SceneToLoad(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
    

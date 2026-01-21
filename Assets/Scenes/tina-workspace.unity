@@ -2170,7 +2170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1365729901
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3150,7 +3150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   pausePanel: {fileID: 0}
   spellPanel: {fileID: 1365729900}
-  losePanel: {fileID: 0}
+  losePanel: {fileID: 166672075}
 --- !u!1 &2070567672
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,7 +3344,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2134618211}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2023266841}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: SceneToLoad
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: tina-workspace
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2134618211
 MonoBehaviour:
   m_ObjectHideFlags: 0
