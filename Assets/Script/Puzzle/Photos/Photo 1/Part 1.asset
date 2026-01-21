@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa3eab12dae8be340addf89ad998a248, type: 3}
-  m_Name: Photo1
+  m_Name: Part 1
   m_EditorClassIdentifier: Assembly-CSharp::PhotoPuzzle
   photoWord: Barong
   damageType: {fileID: 11400000, guid: 911bbfaf3ac60f144b2d8140ba1441d0, type: 2}

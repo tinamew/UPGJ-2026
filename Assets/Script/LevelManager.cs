@@ -59,10 +59,10 @@ public class LevelManager : MonoBehaviour
     {
        if(selectedType == LevelManager.instance.photos[currentLevel].damageType)
         {
-            photos[currentLevel].damageIsSolved = true;
+            photos[currentLevel].isResolved = true;
         }
        else
-            photos[currentLevel].damageIsSolved = false;
+            photos[currentLevel].isResolved = false;
     }
 
     private void OnDestroy()
