@@ -11,6 +11,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject spellPanel;
     private bool isSpellPanelOpen = false;
 
+    [Header("Lose Menu")]
+    [SerializeField] private GameObject losePanel;
+
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -46,6 +50,12 @@ public class UIManager : MonoBehaviour
             spellPanel.SetActive(false);
             isSpellPanelOpen = false;
         }
+    }
+
+    public void LoseMenu()
+    {
+        losePanel.SetActive(true);
+
     }
 
 }

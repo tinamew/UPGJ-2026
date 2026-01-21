@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private List<PhotoPuzzle> photos;
     [SerializeField] private WordPuzzle wordPuzzle;
 
+    [SerializeField] private int retryNum = 3;
     private int currentLevel = 0;
 
     void Start()
@@ -30,6 +31,12 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Level " + currentLevel + " complete!");
         currentLevel++;
         StartLevel();
+    }
+
+    void LoseLevel()
+    {
+        Debug.Log("You lost all your tries. Photo cannot be fixed!");
+        UIManager.instance.LoseMenu();
     }
 
     private void OnDestroy()
