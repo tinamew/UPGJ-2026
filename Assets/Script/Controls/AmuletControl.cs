@@ -40,7 +40,7 @@ public class AmuletControl : MonoBehaviour
         Debug.Log("Has entered lens.");
         amuletModel.SetActive(false);
         particleFX.Play();
-        Interaction.instance.selectedObject = null;
+        Interaction.Instance.selectedObject = null;
 
         StartCoroutine(DisableAmulet());
     }

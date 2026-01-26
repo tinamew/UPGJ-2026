@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: WaterStain
   m_EditorClassIdentifier: Assembly-CSharp::DamageType
   typeName: Water Stain
+  typeObject: {fileID: 3286702122320251463, guid: b5b9c4340ac341a4ea7f29aa3de272c2, type: 3}
