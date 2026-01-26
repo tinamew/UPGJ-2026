@@ -1,0 +1,22 @@
+# speaker: Rene
+Jeez... I know I was gone for a long time but I didn't think tatay wouldn't know how to clean up for himself.
+# speaker: Tita Elena
+# sprite: Elena_Smile
+Tao po!
+# speaker: Rene
+(Oh jeez, customers this early?)
+# speaker: Tita Elena
+# sprite: Elena_Pissed
+Sus, alas 10 na wala pa gihapon niabri?! Naa naman unta tong anak ni Armando niabot diri gahapona
+# speaker: Rene
+# sprite: Elena_Normal
+Ay wait lang po!
+
+
+-> END
+
+=== firstMistake ===
+Phew! That was a close one. My wrong incantation would have ruined the photo if I didn’t protect it with my ward… Still, that ward won’t last forever.
+(You get three tries per photo, and if you end up using up all those tries, the photo will be ruined and the customer will be upset)
+-> DONE
+
