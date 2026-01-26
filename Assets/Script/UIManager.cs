@@ -6,6 +6,8 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance {  get; private set; }
 
+    [SerializeField] AmuletControl amulet;
+
     [Header("Pause Menu")]
     [SerializeField] private GameObject pausePanel;
 
@@ -41,11 +43,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(closeSpellKey))
+        if (Input.GetKeyDown(closeSpellKey))
         {
             CloseSpells();
         }
-        if (Input.GetKey(pauseKey))
+        if (Input.GetKeyDown(pauseKey))
         {
 
         }
@@ -53,7 +55,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenSpells()
     {
-        if (spellPanel.gameObject.activeSelf)
+        if (!spellPanel.gameObject.activeSelf)
         {
             spellPanel.SetActive(true);
         }
@@ -64,7 +66,21 @@ public class UIManager : MonoBehaviour
         if (spellPanel.gameObject.activeSelf)
         {
             spellPanel.SetActive(false);
+            amulet.ResetAndShowAmulet();
         }
+    }
+
+    public bool SpellPanelState()
+    {
+        if (!spellPanel.gameObject.activeSelf)
+        {
+            return false;
+        } else
+        if (spellPanel.gameObject.activeSelf)
+        {
+            return true;
+        }
+        return false;
     }
 
     private void PauseMenu()

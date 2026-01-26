@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class MagnifyingGlassController : MonoBehaviour
 {
@@ -14,29 +15,38 @@ public class MagnifyingGlassController : MonoBehaviour
     public float zoomFactor = 2f; // Must match the Scale of BigShirt (e.g. 2)
 
     private Coroutine moveCoroutine;
+    private bool isFrozen = true;
 
+    private void Start()
+    {
+        DisableMagnifyingGlass();
+    }
     void Update()
     {
+        if (!magnifyingGlass.gameObject.activeSelf)
+            return;
+
         if (magnifyingGlass != null && bigShirt != null && smallShirt != null)
         {
-            // 1. Get the position of the glass relative to the background
-            // We subtract the background position to treat the background as the "center" (0,0)
             Vector2 relativePos = magnifyingGlass.anchoredPosition - smallShirt.anchoredPosition;
-
-            // 2. Calculate the counter-movement
-            // We move the big shirt opposite to the glass, scaled by zoom
             Vector2 counterMove = -relativePos * zoomFactor;
-
-            // 3. Apply the position
-            // We add the counter-move to the BigShirt's origin (0,0 inside the mask)
             bigShirt.anchoredPosition = counterMove;
         }
     }
 
+
     public void MoveToTarget(RectTransform target)
     {
-        if (moveCoroutine != null) StopCoroutine(moveCoroutine);
-        moveCoroutine = StartCoroutine(SmoothMove(target.anchoredPosition));
+        if (!UIManager.instance.SpellPanelState())
+        {
+            UnfreezeMagnifyingGlass();
+            magnifyingGlass.gameObject.SetActive(true);
+            if (moveCoroutine != null) StopCoroutine(moveCoroutine);
+            moveCoroutine = StartCoroutine(SmoothMove(target.anchoredPosition));
+        }
+        else
+            FreezeMagnifyingGlass();
+
     }
 
     IEnumerator SmoothMove(Vector2 targetPos)
@@ -52,4 +62,29 @@ public class MagnifyingGlassController : MonoBehaviour
         }
         magnifyingGlass.anchoredPosition = targetPos;
     }
+
+    private void DisableMagnifyingGlass()
+    {
+        magnifyingGlass.gameObject.SetActive(false);
+    }
+
+    public void ShowMagnifyingGlass(RectTransform target)
+    {
+        magnifyingGlass.gameObject.SetActive(true);
+        MoveToTarget(target);
+    }
+
+    public void FreezeMagnifyingGlass()
+    {
+        isFrozen = true;
+
+        if (moveCoroutine != null)
+            StopCoroutine(moveCoroutine);
+    }
+
+    public void UnfreezeMagnifyingGlass()
+    {
+        isFrozen = false;
+    }
+
 }

@@ -1,48 +1,58 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 
 public class AmuletControl : MonoBehaviour
 {
+    public static AmuletControl instance;
+
     private Vector3 default_pos;
     [SerializeField] private GameObject amuletModel;
-   
+    private Collider col;
+    private ParticleSystem particleFX;
+    private bool particleHasPlayed = false;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
-        //sets default pos for reseting later.
-        default_pos = gameObject.GetComponent<Transform>().position;
+        default_pos = transform.position;
+        col = GetComponent<Collider>();
+        particleFX = GetComponent<ParticleSystem>();
     }
 
-    void ResetAmuletPosition()
-    {
-        gameObject.transform.position = default_pos;
-        gameObject.GetComponent<Collider>().enabled = true;
-    }
 
-    void EnableAmulet()
+    public void ResetAndShowAmulet()
     {
+        transform.position = default_pos;
+        particleHasPlayed = false;
         amuletModel.SetActive(true);
+        col.enabled = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        //if amulet enters lens
-        if (other.gameObject.CompareTag("Lens"))
-        {
-            Debug.Log("Has entered lens.");
-            Interaction.instance.selectedObject = null;
-            gameObject.transform.position = other.gameObject.transform.position; //locks in center
-            StartCoroutine(DisableAmulet());
-           
-        }
+        if (!other.CompareTag("Lens"))
+            return;
+
+        Debug.Log("Has entered lens.");
+        amuletModel.SetActive(false);
+        particleFX.Play();
+        Interaction.instance.selectedObject = null;
+
+        StartCoroutine(DisableAmulet());
     }
 
-     IEnumerator DisableAmulet()
+    IEnumerator DisableAmulet()
     {
         yield return new WaitForSeconds(1f);
-        amuletModel.SetActive(false);
+        if (!particleHasPlayed)
+        {
+            particleFX.Play();
+            particleHasPlayed = true;
+        }
         UIManager.instance.OpenSpells();
-      
     }
 }
