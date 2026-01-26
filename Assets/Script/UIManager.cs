@@ -11,13 +11,15 @@ public class UIManager : MonoBehaviour
 
     [Header("Spell Menu")]
     [SerializeField] private GameObject spellPanel;
-    private bool isSpellPanelOpen = false;
 
     private string damageType;
 
     [Header("Lose Menu")]
     [SerializeField] private GameObject losePanel;
 
+    [Header("Control Keys")]
+    [SerializeField] private KeyCode closeSpellKey = KeyCode.Tab;
+    [SerializeField] private KeyCode pauseKey = KeyCode.Escape;
 
     private void Awake()
     {
@@ -39,23 +41,46 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(closeSpellKey))
+        {
+            CloseSpells();
+        }
+        if (Input.GetKey(pauseKey))
+        {
+
+        }
     }
 
     public void OpenSpells()
     {
-        if (!isSpellPanelOpen)
+        if (spellPanel.gameObject.activeSelf)
         {
             spellPanel.SetActive(true);
-            isSpellPanelOpen = true;
-        }
-        else
-        {
-            spellPanel.SetActive(false);
-            isSpellPanelOpen = false;
         }
     }
 
+    public void CloseSpells()
+    {
+        if (spellPanel.gameObject.activeSelf)
+        {
+            spellPanel.SetActive(false);
+        }
+    }
+
+    private void PauseMenu()
+    {
+        if (!pausePanel.gameObject.activeSelf)
+        {
+            pausePanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else if (pausePanel.gameObject.activeSelf)
+        {
+            pausePanel.SetActive(false);
+            Time.timeScale = 1f;
+        }
+
+    }
     public void LoseMenu()
     {
         losePanel.SetActive(true);

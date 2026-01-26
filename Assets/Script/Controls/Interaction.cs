@@ -2,15 +2,26 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
+    public static Interaction instance {  get; private set; }
     [Header("Settings")]
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float selectDistance = 100f;
 
-    private GameObject selectedObject;
+    public GameObject selectedObject;
     private Vector3 offset;
     private Camera mainCam;
     private float dragDepth;
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
     private void Start()
     {
         mainCam = Camera.main;

@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int retryNum = 3;
     private int currentLevel = 0;
 
+    private DamageType currentlySelected;
     private DamageType photoDamageType;
 
     private void Awake()
@@ -57,12 +58,13 @@ public class LevelManager : MonoBehaviour
     //when players selects a damage from the panel
     public void SelectDamageType(DamageType selectedType)
     {
-       if(selectedType == LevelManager.instance.photos[currentLevel].damageType)
-        {
-            photos[currentLevel].isResolved = true;
-        }
-       else
-            photos[currentLevel].isResolved = false;
+        currentlySelected = selectedType;
+       //if(selectedType == LevelManager.instance.photos[currentLevel].damageType)
+       // {
+       //     photos[currentLevel].isResolved = true;
+       // }
+       //else
+       //     photos[currentLevel].isResolved = false;
     }
 
     private void OnDestroy()
