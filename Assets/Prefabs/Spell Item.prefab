@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74002c6b45c9f50449a95bf0371bafb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageSelect
-  currentlySelected: {fileID: 11400000, guid: becb22cc27689794b8f2281a25cb8ed9, type: 2}
+  damageSelect: {fileID: 0}
 --- !u!1 &5300878575443664755
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slot
   currentItem: {fileID: 1192415350132020036}
-  isAnswerSlot: 0
+  slotType: 2
+  answerSlot: {fileID: 0}
 --- !u!222 &806456230115941978
 CanvasRenderer:
   m_ObjectHideFlags: 0

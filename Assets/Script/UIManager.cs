@@ -1,10 +1,12 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance {  get; private set; }
+    public static UIManager instance { get; private set; }
 
     [SerializeField] AmuletControl amulet;
 
@@ -13,11 +15,15 @@ public class UIManager : MonoBehaviour
 
     [Header("Spell Menu")]
     [SerializeField] private GameObject spellPanel;
+    [SerializeField] private AnswerSlot answerSlot;
 
     private string damageType;
 
     [Header("Lose Menu")]
     [SerializeField] private GameObject losePanel;
+
+    [Header("Other")]
+    [SerializeField] private TextMeshProUGUI numOfTriesText;
 
     [Header("Control Keys")]
     [SerializeField] private KeyCode closeSpellKey = KeyCode.Tab;
@@ -67,6 +73,7 @@ public class UIManager : MonoBehaviour
         {
             spellPanel.SetActive(false);
             amulet.ResetAndShowAmulet();
+            //answerSlot.ResetAllSlots();
         }
     }
 
@@ -101,6 +108,11 @@ public class UIManager : MonoBehaviour
     {
         losePanel.SetActive(true);
 
+    }
+
+    public void ChangeRetries(int num)
+    {
+        numOfTriesText.text = num.ToString();
     }
 
     public void SceneToLoad(string sceneName)

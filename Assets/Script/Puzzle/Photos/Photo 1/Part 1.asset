@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Part 1
   m_EditorClassIdentifier: Assembly-CSharp::PhotoPuzzle
   photoWord: Barong
-  damageType: {fileID: 11400000, guid: 911bbfaf3ac60f144b2d8140ba1441d0, type: 2}
+  requiredMethod: {fileID: 11400000, guid: 3c76df696c26e6d40b23f6dca972c0ac, type: 2}
+  requiredDamage: {fileID: 11400000, guid: 492131adcc08c0b4c8990edfdd6059f9, type: 2}
+  isResolved: 0

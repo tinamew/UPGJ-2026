@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626339c3b45d3ed4bac6308dc109bd4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MethodSelect
-  methodType: {fileID: 0}
+  methodSelect: {fileID: 0}
 --- !u!1 &8954516545083690615
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slot
   currentItem: {fileID: 8035219381983241872}
-  isAnswerSlot: 0
+  slotType: 1
+  answerSlot: {fileID: 0}
 --- !u!222 &1338184309848244979
 CanvasRenderer:
   m_ObjectHideFlags: 0

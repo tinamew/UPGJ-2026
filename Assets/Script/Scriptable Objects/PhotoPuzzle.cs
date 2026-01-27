@@ -4,6 +4,10 @@ using UnityEngine;
 public class PhotoPuzzle : ScriptableObject
 {
     public string photoWord;
-    public DamageType damageType;
+
+    public MethodType requiredMethod;
+    public DamageType requiredDamage;
+
     public bool isResolved;
+
 }

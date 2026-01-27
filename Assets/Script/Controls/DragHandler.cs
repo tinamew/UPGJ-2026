@@ -19,12 +19,12 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     private void Start()
     {
-        // Auto-assign homeSlot if it's currently in a non-answer slot
         Slot startSlot = GetComponentInParent<Slot>();
+
         if (startSlot != null)
         {
             currentSlot = startSlot;
-            if (!startSlot.isAnswerSlot) homeSlot = startSlot;
+            homeSlot = startSlot;
 
             startSlot.currentItem = gameObject;
         }
@@ -66,7 +66,16 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             if (dropSlot.currentItem != null && dropSlot.currentItem != gameObject)
             {
                 DragHandler otherItem = dropSlot.currentItem.GetComponent<DragHandler>();
-                otherItem.ReturnHome();
+
+                if (otherItem != null)
+                {
+                    otherItem.ReturnHome();
+                }
+                else
+                {
+                    Debug.LogError($"{dropSlot.currentItem.name} is missing DragHandler!");
+                }
+
             }
             PlaceInSlot(dropSlot);
         }
@@ -94,21 +103,37 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void PlaceInSlot(Slot slot)
     {
         // Clear old slot
-        if (currentSlot != null) currentSlot.currentItem = null;
+        if (currentSlot != null)
+        {
+            if (currentSlot.answerSlot != null)
+                currentSlot.answerSlot.ClearSlot(currentSlot);
+
+            currentSlot.currentItem = null;
+        }
 
         // Move to new slot
         transform.SetParent(slot.transform);
         rectTransform.anchoredPosition = Vector2.zero;
 
-        // Update references
         slot.currentItem = gameObject;
         currentSlot = slot;
+
+        // Notify AnswerSlot if needed
+        if (slot.answerSlot != null)
+            slot.answerSlot.RecordPlacement(gameObject, slot);
     }
 
     public void ReturnHome()
     {
-        if (homeSlot != null) PlaceInSlot(homeSlot);
+        if (homeSlot == null)
+        {
+            Debug.LogWarning($"{name} has no homeSlot assigned!");
+            return;
+        }
+
+        PlaceInSlot(homeSlot);
     }
+
 
     private void ReturnToLastParent()
     {

@@ -7,10 +7,9 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private List<PhotoPuzzle> photos;
     [SerializeField] private WordPuzzle wordPuzzle;
-
-    [SerializeField] private int retryNum = 3;
+    public int retryNum = 3;
     private int currentLevel = 0;
-
+    public PhotoPuzzle currentPhoto;
     private DamageType photoDamageType;
 
     private void Awake()
@@ -38,6 +37,7 @@ public class LevelManager : MonoBehaviour
             return;
         }
         
+
         wordPuzzle.StartWordPuzzle(photos[currentLevel]);
     }
 
@@ -59,5 +59,31 @@ public class LevelManager : MonoBehaviour
     private void OnDestroy()
     {
         wordPuzzle.OnWordSolved -= NextLevel;
+    }
+
+    //checks answer of both method and damage placeholders.
+    public bool CheckAnswer(MethodType selectedMethod, DamageType selectedDamage)
+    {
+
+        if (selectedMethod == currentPhoto.requiredMethod && selectedDamage == currentPhoto.requiredDamage)
+        {
+            Debug.Log("SelectedMethod: " + selectedMethod + " | CurrentMethod: " + currentPhoto.requiredMethod
+                + "SelectedDamage: " + selectedDamage + " | CurrentDamage: " + currentPhoto.requiredDamage);
+            Debug.Log("Correct Selection!");
+            NextLevel();
+            return true;
+        }
+        else
+        {
+            retryNum--;
+            UIManager.instance.ChangeRetries(retryNum);
+            Debug.Log("Incorrect! Tries left: " + retryNum);
+
+            if (retryNum <= 0)
+            {
+                LoseLevel();
+            }
+            return false;
+        }
     }
 }

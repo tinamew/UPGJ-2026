@@ -7,10 +7,10 @@ public class PhotoLevel : ScriptableObject
 {
     public List<DamageType> damageTypes = new List<DamageType>();
     public List<PhotoPuzzle> photoPuzzles = new List<PhotoPuzzle>();
+    
 
     private int _currentDamageIndex = 0;
 
-    // Gets the DamageType the player should currently be working on
     public DamageType GetCurrentRequiredType()
     {
         if (_currentDamageIndex < damageTypes.Count)
@@ -23,7 +23,7 @@ public class PhotoLevel : ScriptableObject
     public List<PhotoPuzzle> GetActivePuzzles()
     {
         DamageType currentType = GetCurrentRequiredType();
-        return photoPuzzles.Where(p => p.damageType == currentType).ToList();
+        return photoPuzzles.Where(p => p.requiredDamage == currentType).ToList();
     }
 
     // Call this whenever a puzzle is completed
