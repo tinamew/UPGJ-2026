@@ -2,23 +2,12 @@ using UnityEngine;
 
 public class DamageSelect : MonoBehaviour
 {
-    private DamageType currentlySelected;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private DamageType currentlySelected;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void SelectDamageType(DamageType selectedType)
-    {
-        currentlySelected = selectedType;
-    }
+    //public void SelectDamageType(DamageType selectedType)
+    //{
+    //    currentlySelected = selectedType;
+    //}
 
    
 }

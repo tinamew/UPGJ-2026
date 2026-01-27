@@ -1,62 +1,118 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    Transform originalParent;
-    CanvasGroup canvasGroup;
-    private void Start()
+    private CanvasGroup canvasGroup;
+    private RectTransform rectTransform;
+    private Transform draggingPlane;
+
+    public Slot homeSlot;      // The tray slot (set in Inspector or Start)
+    public Slot currentSlot;   // The slot it currently occupies
+    private Transform lastParent; // Used for "Undo" if drop is invalid
+
+    private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        rectTransform = GetComponent<RectTransform>();
     }
+
+    private void Start()
+    {
+        // Auto-assign homeSlot if it's currently in a non-answer slot
+        Slot startSlot = GetComponentInParent<Slot>();
+        if (startSlot != null)
+        {
+            currentSlot = startSlot;
+            if (!startSlot.isAnswerSlot) homeSlot = startSlot;
+
+            startSlot.currentItem = gameObject;
+        }
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        originalParent = transform.parent;
-        Canvas canvas = GetComponentInParent<Canvas>();
+        lastParent = transform.parent;
 
+        // Find the root Canvas to move the item to the top of the drawing order
+        Canvas canvas = GetComponentInParent<Canvas>();
         if (canvas != null)
         {
-            transform.SetParent(canvas.transform);
+            draggingPlane = canvas.transform;
+            transform.SetParent(draggingPlane);
         }
 
-        canvasGroup.blocksRaycasts = false;
+        canvasGroup.blocksRaycasts = false; // Important: lets raycast hit the slot below
         canvasGroup.alpha = 0.6f;
     }
+
     public void OnDrag(PointerEventData eventData)
     {
+        // Updates position to follow mouse/finger
         transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-       canvasGroup.blocksRaycasts = true; //enables raycast
-       canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1f;
 
-        Slot dropSlot = eventData.pointerEnter?.GetComponent<Slot>();
-        Slot originalSlot = originalParent.GetComponent<Slot>();
+        // Find what is under the mouse
+        Slot dropSlot = GetSlotUnderPointer(eventData);
 
-        if(dropSlot != null)
+        if (dropSlot != null)
         {
-            if(dropSlot.currentItem != null)
+            // If there's an item already there, kick it home
+            if (dropSlot.currentItem != null && dropSlot.currentItem != gameObject)
             {
-                dropSlot.currentItem.transform.SetParent(originalSlot.transform);
-                originalSlot.currentItem = dropSlot.currentItem;
-                dropSlot.currentItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                DragHandler otherItem = dropSlot.currentItem.GetComponent<DragHandler>();
+                otherItem.ReturnHome();
             }
-            else
-            {
-                originalSlot.currentItem = null;
-            }
-
-            transform.SetParent(dropSlot.transform);
-            dropSlot.currentItem = gameObject;
+            PlaceInSlot(dropSlot);
         }
         else
         {
-            transform.SetParent(originalParent);
+            // Invalid drop: If it came from an answer, send it home. 
+            // Otherwise, put it back where it just was.
+            if (currentSlot != null && currentSlot.isAnswerSlot)
+                ReturnHome();
+            else
+                ReturnToLastParent();
         }
-
-        GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
     }
 
+    private Slot GetSlotUnderPointer(PointerEventData eventData)
+    {
+        // eventData.pointerEnter can be fickle. This checks for the Slot component specifically.
+        if (eventData.pointerEnter != null)
+        {
+            return eventData.pointerEnter.GetComponent<Slot>();
+        }
+        return null;
+    }
+
+    public void PlaceInSlot(Slot slot)
+    {
+        // Clear old slot
+        if (currentSlot != null) currentSlot.currentItem = null;
+
+        // Move to new slot
+        transform.SetParent(slot.transform);
+        rectTransform.anchoredPosition = Vector2.zero;
+
+        // Update references
+        slot.currentItem = gameObject;
+        currentSlot = slot;
+    }
+
+    public void ReturnHome()
+    {
+        if (homeSlot != null) PlaceInSlot(homeSlot);
+    }
+
+    private void ReturnToLastParent()
+    {
+        transform.SetParent(lastParent);
+        rectTransform.anchoredPosition = Vector2.zero;
+    }
 }
