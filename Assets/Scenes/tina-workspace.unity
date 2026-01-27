@@ -7853,7 +7853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &790796927
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8068,6 +8068,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 807875655}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 471247878}
+        m_TargetAssemblyTypeName: MagnifyingGlassController, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8648,6 +8660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Slot
   currentItem: {fileID: 0}
   isAnswerSlot: 1
+  slotType: 
 --- !u!1 &1026406396
 GameObject:
   m_ObjectHideFlags: 0
@@ -8659,6 +8672,7 @@ GameObject:
   - component: {fileID: 1026406397}
   - component: {fileID: 1026406398}
   - component: {fileID: 1026406400}
+  - component: {fileID: 1026406401}
   m_Layer: 5
   m_Name: CoffeeStain_Slot
   m_TagString: Untagged
@@ -8700,6 +8714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Slot
   currentItem: {fileID: 245287617}
   isAnswerSlot: 0
+  slotType: 
 --- !u!222 &1026406400
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8708,6 +8723,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026406396}
   m_CullTransparentMesh: 1
+--- !u!114 &1026406401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026406396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6585cea9f9dc1904b8bc8a38aa325c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1033095913
 GameObject:
   m_ObjectHideFlags: 0
@@ -8966,6 +8993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Slot
   currentItem: {fileID: 0}
   isAnswerSlot: 0
+  slotType: 
 --- !u!1 &1149314081
 GameObject:
   m_ObjectHideFlags: 0
@@ -9263,7 +9291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1208238097
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10306,6 +10334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Slot
   currentItem: {fileID: 681033351}
   isAnswerSlot: 0
+  slotType: 
 --- !u!1 &1793028910
 GameObject:
   m_ObjectHideFlags: 0

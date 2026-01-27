@@ -50,6 +50,7 @@ public class Interaction : MonoBehaviour
                 selectedObject = hit.collider.gameObject;
                 dragDepth = Vector3.Distance(mainCam.transform.position, selectedObject.transform.position);
                 worldOffset = selectedObject.transform.position - GetMouseWorldPosition();
+                
             }
         }
     }

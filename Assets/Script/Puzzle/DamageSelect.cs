@@ -9,5 +9,5 @@ public class DamageSelect : MonoBehaviour
     //    currentlySelected = selectedType;
     //}
 
-   
+    
 }
