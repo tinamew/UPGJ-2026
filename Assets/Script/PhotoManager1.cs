@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class PhotoManager1 : MonoBehaviour
 {
-    public static LevelManager instance {  get; private set; }
+    public static PhotoManager1 instance {  get; private set; }
 
 
     [SerializeField] private List<PhotoPuzzle> photoAreas;
