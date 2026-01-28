@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PhotoManager1 : MonoBehaviour
 {
@@ -10,9 +11,10 @@ public class PhotoManager1 : MonoBehaviour
     
     [SerializeField] private WordPuzzle wordPuzzle;
     public int retryNum = 3;
-    private int currentLevel = 0;
-    public PhotoPuzzle currentPhoto;
+    private int currentLevel = 0; // 
+    public PhotoPuzzle currentPhoto; // focused area
     private DamageType photoDamageType;
+    public event Action OnLevelCompleted;
 
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class PhotoManager1 : MonoBehaviour
 
     void Start()
     {
-        wordPuzzle.OnWordSolved += NextLevel;
+        wordPuzzle.OnWordSolved += NextLevel; // 
         StartLevel();
     }
 
@@ -42,6 +44,7 @@ public class PhotoManager1 : MonoBehaviour
         wordPuzzle.StartWordPuzzle(photoAreas[currentLevel]);
     }
 
+    // useless, make it transition to photo manager 2
     void NextLevel()
     {
         Debug.Log("Level " + currentLevel + " complete!");
@@ -55,7 +58,12 @@ public class PhotoManager1 : MonoBehaviour
         UIManager.instance.LoseMenu();
     }
 
-   
+    // new code, keep
+    public void CompleteLevel()
+    {
+        Debug.Log($"{name} fired OnLevelCompleted");
+        OnLevelCompleted?.Invoke();
+    }
 
     private void OnDestroy()
     {

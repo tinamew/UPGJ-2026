@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa3eab12dae8be340addf89ad998a248, type: 3}
-  m_Name: Part 1
+  m_Name: P2_Part 2
   m_EditorClassIdentifier: Assembly-CSharp::PhotoPuzzle
-  photoWord: Barong
-  requiredMethod: {fileID: 11400000, guid: 3c76df696c26e6d40b23f6dca972c0ac, type: 2}
-  requiredDamage: {fileID: 11400000, guid: 492131adcc08c0b4c8990edfdd6059f9, type: 2}
+  photoWord: Window
+  requiredMethod: {fileID: 11400000, guid: 636553449794f20498a8c3cc6f689425, type: 2}
+  requiredDamage: {fileID: 11400000, guid: becb22cc27689794b8f2281a25cb8ed9, type: 2}
   isResolved: 0

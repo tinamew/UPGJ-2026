@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PhotoManager3 : MonoBehaviour
 {
@@ -7,12 +8,12 @@ public class PhotoManager3 : MonoBehaviour
 
 
     [SerializeField] private List<PhotoPuzzle> photoAreas;
-    
     [SerializeField] private WordPuzzle wordPuzzle;
     public int retryNum = 3;
     private int currentLevel = 0;
     public PhotoPuzzle currentPhoto;
     private DamageType photoDamageType;
+    public event Action OnLevelCompleted;
 
     private void Awake()
     {
@@ -40,6 +41,13 @@ public class PhotoManager3 : MonoBehaviour
         }
 
         wordPuzzle.StartWordPuzzle(photoAreas[currentLevel]);
+    }
+
+    // new code, keep
+    public void CompleteLevel()
+    {
+        Debug.Log($"{name} fired OnLevelCompleted");
+        OnLevelCompleted?.Invoke();
     }
 
     void NextLevel()

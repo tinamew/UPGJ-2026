@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa3eab12dae8be340addf89ad998a248, type: 3}
-  m_Name: Part 3
+  m_Name: P4_Part 4
   m_EditorClassIdentifier: Assembly-CSharp::PhotoPuzzle
-  photoWord: Cat
-  damageType: {fileID: 11400000, guid: c7ac8060db177fb468cc8ddd9a2f11ec, type: 2}
-  wordIsSolved: 0
-  damageIsSolved: 0
+  photoWord: Dragon
+  requiredMethod: {fileID: 11400000, guid: 3c76df696c26e6d40b23f6dca972c0ac, type: 2}
+  requiredDamage: {fileID: 11400000, guid: 911bbfaf3ac60f144b2d8140ba1441d0, type: 2}
+  isResolved: 0

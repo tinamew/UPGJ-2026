@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PhotoManager2 : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PhotoManager2 : MonoBehaviour
     private int currentLevel = 0;
     public PhotoPuzzle currentPhoto;
     private DamageType photoDamageType;
+    public event Action OnLevelCompleted;
 
     private void Awake()
     {
@@ -40,6 +42,13 @@ public class PhotoManager2 : MonoBehaviour
         }
 
         wordPuzzle.StartWordPuzzle(photoAreas[currentLevel]);
+    }
+
+    // new code, keep
+    public void CompleteLevel()
+    {
+        Debug.Log($"{name} fired OnLevelCompleted");
+        OnLevelCompleted?.Invoke();
     }
 
     void NextLevel()
