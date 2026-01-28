@@ -78,7 +78,22 @@ public class AnswerSlot : MonoBehaviour
             return;
         }
 
-        bool isCorrect = LevelManager.instance.CheckAnswer(methodSelected, damageSelected);
+        bool isCorrect = false;
+
+        switch(LevelManager.instance.currentLevel){
+            case 1:
+                isCorrect = PhotoManager1.instance.CheckAnswer(methodSelected, damageSelected);
+                break;
+            case 2:
+                isCorrect = PhotoManager2.instance.CheckAnswer(methodSelected, damageSelected);
+                break;
+            case 3: 
+                isCorrect = PhotoManager3.instance.CheckAnswer(methodSelected, damageSelected);
+                break;
+            default:
+                break;
+        }
+
 
         if (!isCorrect)
         {
