@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+   
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
     private Transform draggingPlane;
@@ -15,6 +16,8 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         canvasGroup = GetComponent<CanvasGroup>();
         rectTransform = GetComponent<RectTransform>();
+
+       
     }
 
     private void Start()
@@ -57,32 +60,40 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
 
-        // Find what is under the mouse
         Slot dropSlot = GetSlotUnderPointer(eventData);
 
         if (dropSlot != null)
         {
-            // If there's an item already there, kick it home
+            //  Is this a valid category for this slot?
+            if (dropSlot.isAnswerSlot)
+            {
+                bool isMethodItem = GetComponent<MethodSelect>() != null;
+                bool isDamageItem = GetComponent<DamageSelect>() != null;
+
+                bool isWrongMethod = (dropSlot.slotType == AnswerSlotType.Method && !isMethodItem);
+                bool isWrongDamage = (dropSlot.slotType == AnswerSlotType.Damage && !isDamageItem);
+
+                if (isWrongMethod || isWrongDamage)
+                {
+                    Debug.Log($"<color=red>Invalid Placement!</color> {name} cannot go into a {dropSlot.slotType} slot.");
+                    ReturnHome();
+                    return; // Stop here! Don't place the item.
+                }
+            }
+
+            //  If there's already an item there, send it back
             if (dropSlot.currentItem != null && dropSlot.currentItem != gameObject)
             {
                 DragHandler otherItem = dropSlot.currentItem.GetComponent<DragHandler>();
-
-                if (otherItem != null)
-                {
-                    otherItem.ReturnHome();
-                }
-                else
-                {
-                    Debug.LogError($"{dropSlot.currentItem.name} is missing DragHandler!");
-                }
-
+                if (otherItem != null) otherItem.ReturnHome();
             }
+
+            //Successful placement
             PlaceInSlot(dropSlot);
         }
         else
         {
-            // Invalid drop: If it came from an answer, send it home. 
-            // Otherwise, put it back where it just was.
+            // If dropped in empty space, decide where to send it
             if (currentSlot != null && currentSlot.isAnswerSlot)
                 ReturnHome();
             else

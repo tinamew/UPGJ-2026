@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Part 2
   m_EditorClassIdentifier: Assembly-CSharp::PhotoPuzzle
   photoWord: Window
-  damageType: {fileID: 11400000, guid: 911bbfaf3ac60f144b2d8140ba1441d0, type: 2}
-  wordIsSolved: 0
-  damageIsSolved: 0
+  requiredMethod: {fileID: 11400000, guid: 636553449794f20498a8c3cc6f689425, type: 2}
+  requiredDamage: {fileID: 11400000, guid: becb22cc27689794b8f2281a25cb8ed9, type: 2}
+  isResolved: 0

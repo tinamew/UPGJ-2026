@@ -7,4 +7,6 @@ public class SpotSelected : MonoBehaviour
     {
         LevelManager.instance.currentPhoto = answer;
     }
+
+
 }

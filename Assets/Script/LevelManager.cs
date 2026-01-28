@@ -5,7 +5,9 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance {  get; private set; }
 
-    [SerializeField] private List<PhotoPuzzle> photos;
+
+    [SerializeField] private List<PhotoPuzzle> photoAreas;
+    
     [SerializeField] private WordPuzzle wordPuzzle;
     public int retryNum = 3;
     private int currentLevel = 0;
@@ -31,14 +33,13 @@ public class LevelManager : MonoBehaviour
 
     void StartLevel()
     {
-        if (currentLevel >= photos.Count)
+        if (currentLevel >= photoAreas.Count)
         {
             Debug.Log("All levels completed!");
             return;
         }
-        
 
-        wordPuzzle.StartWordPuzzle(photos[currentLevel]);
+        wordPuzzle.StartWordPuzzle(photoAreas[currentLevel]);
     }
 
     void NextLevel()
@@ -65,10 +66,14 @@ public class LevelManager : MonoBehaviour
     public bool CheckAnswer(MethodType selectedMethod, DamageType selectedDamage)
     {
 
-        if (selectedMethod == currentPhoto.requiredMethod && selectedDamage == currentPhoto.requiredDamage)
+        if (selectedMethod == currentPhoto.requiredMethod && selectedDamage == currentPhoto.requiredDamage && wordPuzzle.solved)
         {
             Debug.Log("SelectedMethod: " + selectedMethod + " | CurrentMethod: " + currentPhoto.requiredMethod
                 + "SelectedDamage: " + selectedDamage + " | CurrentDamage: " + currentPhoto.requiredDamage);
+           
+            currentPhoto.isResolved = true;
+            currentPhoto.smallDamageSprite.gameObject.SetActive(false);
+            currentPhoto.largeDamageSprite.gameObject.SetActive(false);
             Debug.Log("Correct Selection!");
             NextLevel();
             return true;

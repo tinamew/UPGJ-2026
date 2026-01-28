@@ -12,7 +12,7 @@ public class WordPuzzle : MonoBehaviour
     private string currentWord;
     private List<LetterSlot> slots = new();
     private int currentIndex;
-    private bool solved;
+    public bool solved;
 
     public void StartWordPuzzle(PhotoPuzzle photo)
     {
@@ -51,7 +51,7 @@ public class WordPuzzle : MonoBehaviour
                 if (CheckAnswer())
                 {
                     solved = true;
-                    OnWordSolved?.Invoke();
+                  //  OnWordSolved?.Invoke();
                 }
             }
         }

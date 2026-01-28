@@ -16,7 +16,12 @@ public class AnswerSlot : MonoBehaviour
         switch (slot.slotType)
         {
             case AnswerSlotType.Method:
-                methodSelected = droppedObject.GetComponent<MethodSelect>().methodSelect;
+                if(!droppedObject.GetComponent<MethodSelect>())
+                {
+                    
+                }
+                else
+                    methodSelected = droppedObject.GetComponent<MethodSelect>().methodSelect;
                 break;
 
             case AnswerSlotType.Damage:
