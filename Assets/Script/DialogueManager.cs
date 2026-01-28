@@ -7,16 +7,29 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager instance; // singleton
     public TextAsset inkFile;
     public GameObject textBox;
     public CharacterData characterData;
     public Image portraitImage;
-
+    
     private Story story;
     TMP_Text nametag;
     TMP_Text message;
     List<string> tags;
    
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        // optional: keep this alive across scenes
+        // DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
@@ -69,7 +82,40 @@ public class DialogueManager : MonoBehaviour
         }
         yield return null;
     }
+    
+    // Chooses which knot to go through within the story
+    public void ChooseDialogue(int currentLevel, float progress, int areaSelected)
+    {
+        if (currentLevel == 1){
+            switch(progress) 
+                {
+                case 25:
+                    // code block
+                    break;
+                case 50:
+                    // code block
+                    break;
+                case 75:
+                    
+                case 100:
 
+                default:
+                    // code block
+                    break;
+                }
+            story.ChoosePathString(knotName)
+            AdvanceDialogue()
+        }
+        else if (currentLevel == 2){
+            //else if statements here
+        }
+        else if (currentLevel == 3) {
+            
+
+            //exit the code here
+            //someting something knot to the ending
+        }
+    }
     /*** Tag Parser ***/
     /// In Inky, you can use tags which can be used to cue stuff in a game.
     /// This is just one way of doing it. Not the only method on how to trigger events. 
