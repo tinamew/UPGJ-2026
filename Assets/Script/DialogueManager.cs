@@ -103,8 +103,8 @@ public class DialogueManager : MonoBehaviour
                     // code block
                     break;
                 }
-            story.ChoosePathString(knotName)
-            AdvanceDialogue()
+          //  story.ChoosePathString(knotName);
+            AdvanceDialogue();
         }
         else if (currentLevel == 2){
             //else if statements here

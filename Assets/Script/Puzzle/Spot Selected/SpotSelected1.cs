@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class SpotSelected : MonoBehaviour
+public class SpotSelected1 : MonoBehaviour
 {
     //this script is for buttons/damaged spots.
     public void SetRequiredAnswer(PhotoPuzzle answer)
     {
-        LevelManager.instance.currentPhoto = answer;
+        PhotoManager1.instance.currentPhoto = answer;
     }
 
 
