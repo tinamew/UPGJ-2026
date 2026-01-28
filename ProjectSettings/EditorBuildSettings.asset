@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Game Scene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/IntroScene.unity
+    guid: d67b642f397b7ee4a8cce3688de9a8c6
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 05ef8b4e323ad9b43a719ac730773b8e
   - enabled: 1
     path: Assets/Scenes/tina-workspace.unity
     guid: 5a6d3f98fde0d4f4baf30f51f6fd43e7
