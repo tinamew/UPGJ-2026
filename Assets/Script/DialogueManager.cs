@@ -96,9 +96,9 @@ public class DialogueManager : MonoBehaviour
                     // code block
                     break;
                 case 75:
-                    
+                    break;
                 case 100:
-
+                    break;
                 default:
                     // code block
                     break;
@@ -112,7 +112,7 @@ public class DialogueManager : MonoBehaviour
         else if (currentLevel == 3) {
             
 
-            //exit the code here
+            //exit the code herez
             //someting something knot to the ending
         }
     }
