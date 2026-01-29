@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
         {
             spellPanel.SetActive(false);
             amulet.ResetAndShowAmulet();
-            //answerSlot.ResetAllSlots();
+            answerSlot.ResetAllSlots();
         }
     }
 

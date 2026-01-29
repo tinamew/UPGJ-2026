@@ -5655,6 +5655,91 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159508466}
   m_CullTransparentMesh: 1
+--- !u!1 &165757342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165757346}
+  - component: {fileID: 165757345}
+  - component: {fileID: 165757344}
+  - component: {fileID: 165757343}
+  m_Layer: 0
+  m_Name: UI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &165757343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165757342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6585cea9f9dc1904b8bc8a38aa325c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnswerSlot
+  answerSlots:
+  - {fileID: 1022721542}
+  - {fileID: 1145970287}
+--- !u!114 &165757344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165757342}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55beb7e7d869004db0ac589dab245ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  inkFile: {fileID: 4900000, guid: 236b76aa278f48b4b9efe0e5135aee18, type: 3}
+  textBox: {fileID: 293288116}
+  characterData: {fileID: 1689305743}
+  portraitImage: {fileID: 159332647}
+--- !u!114 &165757345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165757342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42b132df11a8b14589991382048f0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  amulet: {fileID: 120451715}
+  pausePanel: {fileID: 0}
+  spellPanel: {fileID: 1365729900}
+  answerSlot: {fileID: 165757343}
+  losePanel: {fileID: 166672075}
+  numOfTriesText: {fileID: 1707900625}
+  closeSpellKey: 9
+  pauseKey: 27
+--- !u!4 &165757346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165757342}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &166672075
 GameObject:
   m_ObjectHideFlags: 0
@@ -5731,54 +5816,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166672075}
   m_CullTransparentMesh: 1
---- !u!1 &198153853
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 198153854}
-  - component: {fileID: 198153855}
-  m_Layer: 0
-  m_Name: Photo Manager 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &198153854
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198153853}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 551704706}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &198153855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198153853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a681c1da15fb2498f810fc410b68a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PhotoManager3
-  photoAreas: []
-  wordPuzzle: {fileID: 0}
-  retryNum: 3
-  currentPhoto: {fileID: 0}
 --- !u!1 &215395804
 GameObject:
   m_ObjectHideFlags: 0
@@ -6152,6 +6189,55 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
   m_PrefabInstance: {fileID: 404885258}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &434228336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 434228337}
+  - component: {fileID: 434228338}
+  m_Layer: 0
+  m_Name: Photo Manager 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &434228337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434228336}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 551704706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434228338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434228336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83658a6df53257d4d8808c1705e5fa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhotoManager2
+  photoPuzzles: []
+  wordPuzzle: {fileID: 0}
+  retryNum: 3
+  currentPuzzleFocused: {fileID: 0}
+  photoProgress: 0
 --- !u!1 &443141784
 GameObject:
   m_ObjectHideFlags: 0
@@ -6297,6 +6383,7 @@ GameObject:
   - component: {fileID: 471247881}
   - component: {fileID: 471247882}
   - component: {fileID: 471247883}
+  - component: {fileID: 471247884}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -6351,8 +6438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   endingCutscene: {fileID: 0}
   PhotoManager1: {fileID: 690009956}
-  PhotoManager2: {fileID: 2010437408}
-  PhotoManager3: {fileID: 198153855}
+  PhotoManager2: {fileID: 434228338}
+  PhotoManager3: {fileID: 925729081}
   currentLevel: 0
 --- !u!114 &471247883
 MonoBehaviour:
@@ -6369,6 +6456,18 @@ MonoBehaviour:
   letterSlotPrefab: {fileID: 6295440048727403737, guid: 1b26784a967869d4993adb8510f2cd86, type: 3}
   slotsParent: {fileID: 1926381284}
   solved: 0
+--- !u!114 &471247884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471247878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7cfbcc432a7bd41a21b63afcbafd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpotSelected
 --- !u!1 &529024042
 GameObject:
   m_ObjectHideFlags: 0
@@ -6536,8 +6635,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 690009955}
-  - {fileID: 2010437407}
-  - {fileID: 198153854}
+  - {fileID: 434228337}
+  - {fileID: 925729080}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &590791111
@@ -7079,14 +7178,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe5da40aa51d7ef418f3e4610c8333d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhotoManager1
-  photoAreas:
+  photoPuzzles:
   - {fileID: 11400000, guid: 174daef238ec55a4699b2bfd2d32a11c, type: 2}
   - {fileID: 11400000, guid: 5b429c4bdce0a264dae6ee16f43693e2, type: 2}
-  - {fileID: 11400000, guid: 081bd9c437135d947bc03efdcfc8dc8f, type: 2}
-  - {fileID: 11400000, guid: 4b9a74f836028ef4a89536813d74d16a, type: 2}
   wordPuzzle: {fileID: 471247883}
   retryNum: 3
-  currentPhoto: {fileID: 0}
+  currentPuzzleFocused: {fileID: 0}
+  photoProgress: 0
 --- !u!1 &729896648
 GameObject:
   m_ObjectHideFlags: 0
@@ -7635,6 +7733,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849036211}
   m_CullTransparentMesh: 1
+--- !u!1 &925729079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 925729080}
+  - component: {fileID: 925729081}
+  m_Layer: 0
+  m_Name: Photo Manager 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &925729080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925729079}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 551704706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &925729081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925729079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43342b4d05d2e344832ab3d632d78fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhotoManager3
+  photoPuzzles: []
+  wordPuzzle: {fileID: 0}
+  retryNum: 3
+  currentPuzzleFocused: {fileID: 0}
+  photoProgress: 0
 --- !u!1 &945741511
 GameObject:
   m_ObjectHideFlags: 0
@@ -7837,7 +7984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Slot
   currentItem: {fileID: 0}
   slotType: 2
-  answerSlot: {fileID: 2146627077}
+  answerSlot: {fileID: 165757343}
 --- !u!1 &1033095913
 GameObject:
   m_ObjectHideFlags: 0
@@ -8146,7 +8293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Slot
   currentItem: {fileID: 0}
   slotType: 1
-  answerSlot: {fileID: 2146627077}
+  answerSlot: {fileID: 165757343}
 --- !u!1 &1149314081
 GameObject:
   m_ObjectHideFlags: 0
@@ -8907,7 +9054,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2146627077}
+      - m_Target: {fileID: 165757343}
         m_TargetAssemblyTypeName: AnswerSlot, Assembly-CSharp
         m_MethodName: OnSubmitClicked
         m_Mode: 1
@@ -10275,54 +10422,6 @@ RectTransform:
   m_AnchoredPosition: {x: -521.1, y: -242.29999}
   m_SizeDelta: {x: 195.84, y: 113.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &2010437406
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2010437407}
-  - component: {fileID: 2010437408}
-  m_Layer: 0
-  m_Name: Photo Manager 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2010437407
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2010437406}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 551704706}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2010437408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2010437406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8bc2a227d15a848b804ce41e2e7854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PhotoManager2
-  photoAreas: []
-  wordPuzzle: {fileID: 0}
-  retryNum: 3
-  currentPhoto: {fileID: 0}
 --- !u!1 &2023266839
 GameObject:
   m_ObjectHideFlags: 0
@@ -10764,91 +10863,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134618208}
   m_CullTransparentMesh: 1
---- !u!1 &2146627073
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2146627074}
-  - component: {fileID: 2146627075}
-  - component: {fileID: 2146627076}
-  - component: {fileID: 2146627077}
-  m_Layer: 0
-  m_Name: UI Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2146627074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146627073}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2146627075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146627073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e42b132df11a8b14589991382048f0db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  amulet: {fileID: 120451715}
-  pausePanel: {fileID: 0}
-  spellPanel: {fileID: 1365729900}
-  answerSlot: {fileID: 2146627077}
-  losePanel: {fileID: 166672075}
-  numOfTriesText: {fileID: 1707900625}
-  closeSpellKey: 9
-  pauseKey: 27
---- !u!114 &2146627076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146627073}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d55beb7e7d869004db0ac589dab245ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  inkFile: {fileID: 4900000, guid: 236b76aa278f48b4b9efe0e5135aee18, type: 3}
-  textBox: {fileID: 293288116}
-  characterData: {fileID: 1689305743}
-  portraitImage: {fileID: 159332647}
---- !u!114 &2146627077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146627073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6585cea9f9dc1904b8bc8a38aa325c8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnswerSlot
-  answerSlots:
-  - {fileID: 1022721542}
-  - {fileID: 1145970287}
 --- !u!1 &127979542080299312
 GameObject:
   m_ObjectHideFlags: 0
@@ -11345,13 +11359,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8283509166646960396}
-        m_TargetAssemblyTypeName: MagnifyingGlassController, Assembly-CSharp
-        m_MethodName: ShowMagnifyingGlass
+      - m_Target: {fileID: 471247884}
+        m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
+        m_MethodName: SetFocusedPhoto
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 442416090860683328}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 5b429c4bdce0a264dae6ee16f43693e2, type: 2}
+          m_ObjectArgumentAssemblyTypeName: PhotoPuzzle, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11567,13 +11581,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8283509166646960396}
-        m_TargetAssemblyTypeName: MagnifyingGlassController, Assembly-CSharp
-        m_MethodName: ShowMagnifyingGlass
+      - m_Target: {fileID: 471247884}
+        m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
+        m_MethodName: SetFocusedPhoto
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7888331348710239013}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 174daef238ec55a4699b2bfd2d32a11c, type: 2}
+          m_ObjectArgumentAssemblyTypeName: PhotoPuzzle, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11796,9 +11810,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1163166467160762635}
+      - m_Target: {fileID: 471247884}
         m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
-        m_MethodName: SetRequiredAnswer
+        m_MethodName: SetFocusedPhoto
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 174daef238ec55a4699b2bfd2d32a11c, type: 2}
@@ -11991,9 +12005,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1163166467160762635}
+      - m_Target: {fileID: 471247884}
         m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
-        m_MethodName: SetRequiredAnswer
+        m_MethodName: SetFocusedPhoto
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 5b429c4bdce0a264dae6ee16f43693e2, type: 2}
@@ -12246,7 +12260,7 @@ SceneRoots:
   - {fileID: 2023266840}
   - {fileID: 471247879}
   - {fileID: 551704706}
-  - {fileID: 2146627074}
   - {fileID: 945741515}
   - {fileID: 120451713}
   - {fileID: 1852899206}
+  - {fileID: 165757346}

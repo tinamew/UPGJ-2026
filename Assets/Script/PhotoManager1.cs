@@ -15,6 +15,9 @@ public class PhotoManager1 : MonoBehaviour
     // retries
     public int retryNum = 3; 
 
+    // holds the current puzzle that is being focused
+    public PhotoPuzzle currentPuzzleFocused;
+
     // sends signal to the level manager
     public event Action OnLevelCompleted;
 
@@ -61,6 +64,7 @@ public class PhotoManager1 : MonoBehaviour
     void UpdatePhotoProgress()
     {
         //update the photo progress by 25
+        Debug.Log("Photoprogress is " + photoProgress);
         photoProgress += 25; 
     }
 
@@ -71,9 +75,6 @@ public class PhotoManager1 : MonoBehaviour
         OnLevelCompleted?.Invoke();
     }
 
-    private void OnDestroy()
-    {
-    }
 
     //checks answer of both method and damage placeholders.
     // arguments here come from answerslots.cs
@@ -91,6 +92,7 @@ public class PhotoManager1 : MonoBehaviour
             currentPuzzleFocused.largeDamageSprite.gameObject.SetActive(false);
             Debug.Log("Correct Selection!");
             UpdatePhotoProgress();
+            UIManager.instance.CloseSpells();
             return true;
         }
         else

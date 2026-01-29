@@ -7,8 +7,6 @@ public class WordPuzzle : MonoBehaviour
     public LetterSlot letterSlotPrefab;
     public Transform slotsParent;
 
-    public event Action OnWordSolved;
-
     private string currentWord;
     private List<LetterSlot> slots = new();
     private int currentIndex;
@@ -52,7 +50,6 @@ public class WordPuzzle : MonoBehaviour
                 if (CheckAnswer())
                 {
                     solved = true;
-                    OnWordSolved?.Invoke();
                 }
             }
         }
