@@ -6,14 +6,20 @@ public class PhotoManager1 : MonoBehaviour
 {
     public static PhotoManager1 instance {  get; private set; }
 
-    [SerializeField] private List<PhotoPuzzle> photoAreas;    
+    // list of photopuzzles within the image
+    [SerializeField] private List<PhotoPuzzle> photoPuzzles;    
+
+    // word puzzle component
     [SerializeField] private WordPuzzle wordPuzzle;
 
-    public int retryNum = 3;
-    private int currentLevel = 0; // index for photo areas, fuckass. change this to focusded levels 
-    public PhotoPuzzle currentPhoto; // focused area
-    private DamageType photoDamageType;
+    // retries
+    public int retryNum = 3; 
+
+    // sends signal to the level manager
     public event Action OnLevelCompleted;
+
+    // manages the state of the photo
+    public int photoProgress = 0;
 
     private void Awake()
     {
@@ -26,35 +32,36 @@ public class PhotoManager1 : MonoBehaviour
         instance = this;
     }
 
-    void Start()
+    private void Start()
     {
-        wordPuzzle.OnWordSolved += NextLevel; // 
-        StartLevel();
+        // pass
     }
 
-    void StartLevel()
+    private void OnDestroy()
     {
-        if (currentLevel >= photoAreas.Count)
-        {
-            Debug.Log("All levels completed!");
-            return;
-        }
-
-        wordPuzzle.StartWordPuzzle(photoAreas[currentLevel]);
+        // pass
     }
 
-    // useless, make it transition to photo manager 2
-    void NextLevel()
+    public void FocusPuzzle(PhotoPuzzle puzzle)
     {
-        Debug.Log("Level " + currentLevel + " complete!");
-        currentLevel++;
-        StartLevel();
+        // sets current puzzle focused as the puzzle
+        currentPuzzleFocused = puzzle;
+
+        // starts the word puzzle for the current puzzle
+        wordPuzzle.StartWordPuzzle(puzzle);
     }
+
 
     void LoseLevel()
     {
         Debug.Log("You lost all your tries. Photo cannot be fixed!");
         UIManager.instance.LoseMenu();
+    }
+
+    void UpdatePhotoProgress()
+    {
+        //update the photo progress by 25
+        photoProgress += 25; 
     }
 
     // new code, keep
@@ -66,23 +73,24 @@ public class PhotoManager1 : MonoBehaviour
 
     private void OnDestroy()
     {
-        wordPuzzle.OnWordSolved -= NextLevel;
     }
 
     //checks answer of both method and damage placeholders.
+    // arguments here come from answerslots.cs
     public bool CheckAnswer(MethodType selectedMethod, DamageType selectedDamage)
     {
 
-        if (selectedMethod == currentPhoto.requiredMethod && selectedDamage == currentPhoto.requiredDamage && wordPuzzle.solved)
+        //word puzzle is fine because it resets upon
+        if (selectedMethod == currentPuzzleFocused.requiredMethod && selectedDamage == currentPuzzleFocused.requiredDamage && wordPuzzle.solved)
         {
-            Debug.Log("SelectedMethod: " + selectedMethod + " | CurrentMethod: " + currentPhoto.requiredMethod
-                + "SelectedDamage: " + selectedDamage + " | CurrentDamage: " + currentPhoto.requiredDamage);
+            Debug.Log("SelectedMethod: " + selectedMethod + " | CurrentMethod: " + currentPuzzleFocused.requiredMethod
+                + "SelectedDamage: " + selectedDamage + " | CurrentDamage: " + currentPuzzleFocused.requiredDamage);
            
-            currentPhoto.isResolved = true;
-            currentPhoto.smallDamageSprite.gameObject.SetActive(false);
-            currentPhoto.largeDamageSprite.gameObject.SetActive(false);
+            currentPuzzleFocused.isResolved = true; //resolves the current photo
+            currentPuzzleFocused.smallDamageSprite.gameObject.SetActive(false); 
+            currentPuzzleFocused.largeDamageSprite.gameObject.SetActive(false);
             Debug.Log("Correct Selection!");
-            NextLevel();
+            UpdatePhotoProgress();
             return true;
         }
         else

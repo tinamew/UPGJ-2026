@@ -14,6 +14,25 @@ public class PhotoPuzzle : ScriptableObject
     [System.NonSerialized]
     public GameObject largeDamageSprite;
 
-    public bool isResolved;
+    public bool isResolved; // for if the object is resolved or not
+    public event Action<PhotoPuzzle> OnPuzzleSolved;
+
+    public void MarkSolved()
+    {
+        if (isResolved)
+        {
+            return;
+        }
+
+        isResolved = true;
+
+        // notify that this has been solved
+        OnPuzzleSolved?.Invoke(this)
+    }
+
+    public void ResetState()
+    {
+        isResolved = false;
+    }
 
 }

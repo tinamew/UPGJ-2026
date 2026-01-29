@@ -48,10 +48,11 @@ public class WordPuzzle : MonoBehaviour
 
             if (currentIndex == currentWord.Length)
             {
+                // if the answer is correct, it checks it and sends it 
                 if (CheckAnswer())
                 {
                     solved = true;
-                  //  OnWordSolved?.Invoke();
+                    OnWordSolved?.Invoke();
                 }
             }
         }
