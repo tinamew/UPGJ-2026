@@ -6349,6 +6349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a809a6d43d41004f85e407bf40a83cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  endingCutscene: {fileID: 0}
   PhotoManager1: {fileID: 690009956}
   PhotoManager2: {fileID: 2010437408}
   PhotoManager3: {fileID: 198153855}
@@ -7969,7 +7970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1088117640
 RectTransform:
   m_ObjectHideFlags: 0

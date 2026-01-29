@@ -6,12 +6,11 @@ public class PhotoManager1 : MonoBehaviour
 {
     public static PhotoManager1 instance {  get; private set; }
 
-
-    [SerializeField] private List<PhotoPuzzle> photoAreas;
-    
+    [SerializeField] private List<PhotoPuzzle> photoAreas;    
     [SerializeField] private WordPuzzle wordPuzzle;
+
     public int retryNum = 3;
-    private int currentLevel = 0; // 
+    private int currentLevel = 0; // index for photo areas, fuckass. change this to focusded levels 
     public PhotoPuzzle currentPhoto; // focused area
     private DamageType photoDamageType;
     public event Action OnLevelCompleted;
