@@ -144,16 +144,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529368}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 590791112}
+  m_Father: {fileID: 293288117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -557, y: 49}
+  m_AnchoredPosition: {x: -557, y: 66.00001}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1529370
@@ -5909,7 +5909,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165757342}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d55beb7e7d869004db0ac589dab245ee, type: 3}
   m_Name: 
@@ -6672,7 +6672,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1529369}
+  - {fileID: 529024043}
   m_Father: {fileID: 590791112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7215,16 +7217,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529024042}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 590791112}
+  m_Father: {fileID: 293288117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: -136}
+  m_AnchoredPosition: {x: -10, y: -119.000015}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529024044
@@ -7506,8 +7508,6 @@ RectTransform:
   m_Children:
   - {fileID: 1904369523}
   - {fileID: 293288117}
-  - {fileID: 1529369}
-  - {fileID: 529024043}
   m_Father: {fileID: 1605644946}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7889,7 +7889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &614015830
 Transform:
   m_ObjectHideFlags: 0
@@ -12707,6 +12707,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characters:
+  - characterName: Lola
+    portraits:
+    - id: Lola_Angry
+      sprite: {fileID: 21300000, guid: d31a820ce2f2bc645b6f9f34fe88d31f, type: 3}
+    - id: 
+      sprite: {fileID: 0}
+    - id: Lola_Normal
+      sprite: {fileID: 21300000, guid: befa989bc01365647bdbe88de9f0433c, type: 3}
+    - id: Lola_Sad
+      sprite: {fileID: 21300000, guid: e2d681493f7730140869b7610165cc68, type: 3}
+    - id: Lola_Smiling
+      sprite: {fileID: 21300000, guid: 2de59a80ec263f147a00f4e2a26b792b, type: 3}
+    - id: Lola_Uneasy
+      sprite: {fileID: 21300000, guid: 97bdfe91cffd51442ab49b64e72c7a24, type: 3}
+    - id: Lola_Blank
+      sprite: {fileID: 21300000, guid: 21ffe47a6c2d20b44926ae01aaea6e58, type: 3}
   - characterName: Elena
     portraits:
     - id: Elena_Normal
@@ -12715,8 +12731,10 @@ MonoBehaviour:
       sprite: {fileID: 21300000, guid: 9faee6120a1fc714f8f1c77b5232e734, type: 3}
     - id: Elena_Smile
       sprite: {fileID: 21300000, guid: a89d6783928111b4289c517ee0fe0155, type: 3}
-  - characterName: Rene
-    portraits: []
+    - id: Elena_SnarkyLaugh
+      sprite: {fileID: 21300000, guid: 68773612ecb25d240addabccbcf18d5c, type: 3}
+    - id: Elena_Uneasy
+      sprite: {fileID: 21300000, guid: ef2110aee9f4b5b4d8e09a7e78d9ca43, type: 3}
 --- !u!4 &1689305744
 Transform:
   m_ObjectHideFlags: 0
@@ -14310,8 +14328,8 @@ Transform:
   m_Children:
   - {fileID: 1793028914}
   - {fileID: 729896652}
-  - {fileID: 614015830}
   - {fileID: 748365428}
+  - {fileID: 614015830}
   - {fileID: 1088117640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
