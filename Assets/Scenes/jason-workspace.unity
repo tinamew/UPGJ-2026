@@ -7000,6 +7000,9 @@ MonoBehaviour:
   PhotoManager1: {fileID: 690009956}
   PhotoManager2: {fileID: 1523810888}
   PhotoManager3: {fileID: 1068502997}
+  PhotoLevel1: {fileID: 6314506015800049413}
+  PhotoLevel2: {fileID: 1863196277}
+  PhotoLevel3: {fileID: 1679125516}
   currentLevel: 3
 --- !u!114 &471247883
 MonoBehaviour:

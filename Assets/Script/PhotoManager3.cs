@@ -36,7 +36,7 @@ public class PhotoManager3 : MonoBehaviour
     {
 
         magnifyingGlass = photoLevel.GetComponentInChildren<MagnifyingGlassController>();
-        
+
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -74,9 +74,9 @@ public class PhotoManager3 : MonoBehaviour
 
     void UpdatePhotoProgress()
     {
-        //update the photo progress by 25
-        Debug.Log("Photoprogress is " + photoProgress);
-        photoProgress += 25; 
+        // just deaduzz complete the level
+
+        CompleteLevel();
     }
 
     // new code, keep
