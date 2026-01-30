@@ -33,8 +33,17 @@ public class PhotoManager2 : MonoBehaviour
     [SerializeField] private Sprite half_solved;
     [SerializeField] private Sprite full_solved;
 
+    // contains photo level for magnifying glass controller
+    [SerializeField] private GameObject photoLevel;
+
+    // magnifying glass access
+    private MagnifyingGlassController magnifyingGlass;
+
     private void Awake()
     {
+
+        magnifyingGlass = photoLevel.GetComponentInChildren<MagnifyingGlassController>();
+
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -117,6 +126,7 @@ public class PhotoManager2 : MonoBehaviour
             Debug.Log("Correct Selection!");
             UpdatePhotoProgress();
             UIManager.instance.CloseSpells();
+            magnifyingGlass.DisableMagnifyingGlass();
             return true;
         }
         else

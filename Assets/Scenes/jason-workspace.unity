@@ -8176,6 +8176,7 @@ MonoBehaviour:
   retryNum: 3
   currentPuzzleFocused: {fileID: 0}
   photoProgress: 0
+  photoLevel: {fileID: 6314506015800049413}
 --- !u!1 &729896648
 GameObject:
   m_ObjectHideFlags: 0
@@ -10345,6 +10346,7 @@ MonoBehaviour:
   retryNum: 3
   currentPuzzleFocused: {fileID: 11400000, guid: 2f55f4a0083be2d4b8c0e8a3390d2263, type: 2}
   photoProgress: 0
+  photoLevel: {fileID: 1679125516}
 --- !u!1 &1078593402
 GameObject:
   m_ObjectHideFlags: 0
@@ -12208,7 +12210,7 @@ MonoBehaviour:
   largeImage: {fileID: 912069130}
   half_solved: {fileID: 21300000, guid: df6e86515f258df4cbd4759c5b981aba, type: 3}
   full_solved: {fileID: 21300000, guid: 80ab6ac7d4dec3a4e945908511d8ef45, type: 3}
-  magnifyingGlass: {fileID: 1943241428}
+  photoLevel: {fileID: 1863196277}
 --- !u!1 &1601880172
 GameObject:
   m_ObjectHideFlags: 0
@@ -14004,55 +14006,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1 &1943241427
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1943241429}
-  - component: {fileID: 1943241428}
-  m_Layer: 0
-  m_Name: MagnifyingGlassController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1943241428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943241427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c578663913a258444a7570e272b28640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MagnifyingGlassController
-  magnifyingGlass: {fileID: 0}
-  smallShirt: {fileID: 0}
-  bigShirt: {fileID: 0}
-  moveSpeed: 10
-  zoomFactor: 2
---- !u!4 &1943241429
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943241427}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.13514, y: -0.60598, z: 11.57707}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1958435254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15864,4 +15817,3 @@ SceneRoots:
   - {fileID: 120451713}
   - {fileID: 1852899206}
   - {fileID: 165757346}
-  - {fileID: 1943241429}
