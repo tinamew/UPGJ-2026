@@ -63,9 +63,17 @@ public class PhotoManager1 : MonoBehaviour
 
     void UpdatePhotoProgress()
     {
-        //update the photo progress by 25
+        //update the photo progress by 33
+        if (photoProgress == 66)
+        {
+            photoProgress += 34;
+            CompleteLevel();
+        } 
+        else {
+            photoProgress += 33; 
+        }
+
         Debug.Log("Photoprogress is " + photoProgress);
-        photoProgress += 25; 
     }
 
     // new code, keep
