@@ -3,10 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    public Animator animator;
     public void OnPlayClicked()
     {
-        Debug.Log("Play clicked! Going to Gameplay...");
-        SceneManager.LoadScene("tina-workspace");
+        animator.SetTrigger("isTakeOff");
+    }
+
+    public void TransitionScene()
+    {
+        SceneManager.LoadScene("Game Scene");        
     }
 
     public void OnSettingsClicked()

@@ -3,7 +3,17 @@ guid: 1f4dc4244cd3633428713f45c0c926b0
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SKY
+    second: {fileID: 2100000, guid: 2ecf1d04cc65ce74587493b9130bc7ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bgstext
+    second: {fileID: 2100000, guid: 2d8d27665a9e42a4288097a80b028286, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
