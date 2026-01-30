@@ -125,6 +125,15 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void DisableObject(GameObject obj)
+    {
+        obj.SetActive(false);
+    }
+
+    public void EnableObject(GameObject obj)
+    {
+        obj.SetActive(true);
+    }
    
 
 }

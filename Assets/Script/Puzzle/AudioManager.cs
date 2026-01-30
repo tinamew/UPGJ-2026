@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip magnifyingGlassSFX;
     [SerializeField] private AudioClip restoreSFX;
     [SerializeField] private AudioClip castSpellSFX;
+    [SerializeField] private AudioClip bookOpenSFX;
+    [SerializeField] private AudioClip bookCloseSFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -67,4 +69,8 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
+    public void PlayClip(AudioClip sfxClip)
+    {
+        sfxSource.PlayOneShot(sfxClip);
+    }
 }
