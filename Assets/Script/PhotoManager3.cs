@@ -24,8 +24,19 @@ public class PhotoManager3 : MonoBehaviour
     // manages the state of the photo
     public int photoProgress = 0;
 
+
+    // contains photo level for magnifying glass controller
+    [SerializeField] private GameObject photoLevel;
+
+    // magnifying glass access
+    private MagnifyingGlassController magnifyingGlass;
+
+
     private void Awake()
     {
+
+        magnifyingGlass = photoLevel.GetComponentInChildren<MagnifyingGlassController>();
+
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -63,9 +74,9 @@ public class PhotoManager3 : MonoBehaviour
 
     void UpdatePhotoProgress()
     {
-        //update the photo progress by 25
-        Debug.Log("Photoprogress is " + photoProgress);
-        photoProgress += 25; 
+        // just deaduzz complete the level
+
+        CompleteLevel();
     }
 
     // new code, keep
@@ -92,12 +103,16 @@ public class PhotoManager3 : MonoBehaviour
             currentPuzzleFocused.largeDamageSprite.gameObject.SetActive(false);
             Debug.Log("Correct Selection!");
             UpdatePhotoProgress();
+            UIManager.instance.CloseSpells();
+            magnifyingGlass.DisableMagnifyingGlass();
             return true;
         }
         else
         {
             retryNum--;
             UIManager.instance.ChangeRetries(retryNum);
+            UIManager.instance.ResetAnswerSlots(); // clears slots
+            FocusPuzzle(currentPuzzleFocused); // clears words
             Debug.Log("Incorrect! Tries left: " + retryNum);
 
             if (retryNum <= 0)

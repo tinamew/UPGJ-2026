@@ -24,8 +24,18 @@ public class PhotoManager1 : MonoBehaviour
     // manages the state of the photo
     public int photoProgress = 0;
 
+    // contains photo level for magnifying glass controller
+    [SerializeField] private GameObject photoLevel;
+
+    // magnifying glass access
+    private MagnifyingGlassController magnifyingGlass;
+
+
     private void Awake()
     {
+
+        magnifyingGlass = photoLevel.GetComponentInChildren<MagnifyingGlassController>();
+        
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -101,6 +111,7 @@ public class PhotoManager1 : MonoBehaviour
             Debug.Log("Correct Selection!");
             UpdatePhotoProgress();
             UIManager.instance.CloseSpells();
+            magnifyingGlass.DisableMagnifyingGlass();
             return true;
         }
         else

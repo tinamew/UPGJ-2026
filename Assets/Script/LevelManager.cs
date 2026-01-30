@@ -8,6 +8,10 @@ public class LevelManager : MonoBehaviour
     public PhotoManager2 PhotoManager2;
     public PhotoManager3 PhotoManager3;
 
+    public GameObject PhotoLevel1;
+    public GameObject PhotoLevel2;
+    public GameObject PhotoLevel3;
+
     public int currentLevel;
 
     private void Awake()
@@ -43,22 +47,30 @@ public class LevelManager : MonoBehaviour
 
     private void ActivateCurrentLevel()
     {
-    // Turn everything off first
+    // Turn off every photo manager
     PhotoManager1.gameObject.SetActive(false);
     PhotoManager2.gameObject.SetActive(false);
     PhotoManager3.gameObject.SetActive(false);
 
+    // Turn off every photolevel
+    PhotoLevel1.gameObject.SetActive(false);
+    PhotoLevel2.gameObject.SetActive(false);
+    PhotoLevel3.gameObject.SetActive(false);
+
     switch (currentLevel){
         case 1:
             Debug.Log("Activating Level 1");
+            PhotoLevel1.gameObject.SetActive(true);
             PhotoManager1.gameObject.SetActive(true);
             break;
         case 2:
             Debug.Log("Activating Level 2");
+            PhotoLevel2.gameObject.SetActive(true);
             PhotoManager2.gameObject.SetActive(true);
             break;
         case 3:
             Debug.Log("Activating Level 3");
+            PhotoLevel3.gameObject.SetActive(true);
             PhotoManager3.gameObject.SetActive(true);
             break;
         case 4:
