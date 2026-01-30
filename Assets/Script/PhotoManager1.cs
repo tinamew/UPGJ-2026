@@ -99,6 +99,8 @@ public class PhotoManager1 : MonoBehaviour
         {
             retryNum--;
             UIManager.instance.ChangeRetries(retryNum);
+            UIManager.instance.ResetAnswerSlots(); // clears slots
+            FocusPuzzle(currentPuzzleFocused); // clears words
             Debug.Log("Incorrect! Tries left: " + retryNum);
 
             if (retryNum <= 0)

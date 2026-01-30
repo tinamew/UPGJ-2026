@@ -39,6 +39,7 @@ public class AnswerSlot : MonoBehaviour
             damageSelected = null;
     }
 
+    
     public void ResetAllSlots()
     {
         foreach (Slot slot in answerSlots)
@@ -94,11 +95,6 @@ public class AnswerSlot : MonoBehaviour
                 break;
         }
 
-
-        if (!isCorrect)
-        {
-            ResetAllSlots(); // Clear the slots if they got it wrong
-        }
     }
 
 }
