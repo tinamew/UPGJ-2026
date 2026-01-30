@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa3eab12dae8be340addf89ad998a248, type: 3}
-  m_Name: P2_Part 2
+  m_Name: Blackflame_Wedding
   m_EditorClassIdentifier: Assembly-CSharp::PhotoPuzzle
-  photoWord: Barong
+  photoWord: Wedding
   requiredMethod: {fileID: 11400000, guid: 3c76df696c26e6d40b23f6dca972c0ac, type: 2}
-  requiredDamage: {fileID: 11400000, guid: 492131adcc08c0b4c8990edfdd6059f9, type: 2}
+  requiredDamage: {fileID: 11400000, guid: 3deaf27dda06a76448d3151d09a74c18, type: 2}
   isResolved: 0
