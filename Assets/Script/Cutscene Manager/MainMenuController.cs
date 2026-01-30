@@ -11,7 +11,7 @@ public class MainMenuController : MonoBehaviour
 
     public void TransitionScene()
     {
-        SceneManager.LoadScene("Game Scene");        
+        SceneManager.LoadScene("IntroScene");        
     }
 
     public void OnSettingsClicked()
