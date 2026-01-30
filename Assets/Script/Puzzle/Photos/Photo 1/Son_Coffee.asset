@@ -15,4 +15,4 @@ MonoBehaviour:
   photoWord: Miguel
   requiredMethod: {fileID: 11400000, guid: 3c76df696c26e6d40b23f6dca972c0ac, type: 2}
   requiredDamage: {fileID: 11400000, guid: 42c19c375efd80e449a60fb7e686db57, type: 2}
-  isResolved: 1
+  isResolved: 0

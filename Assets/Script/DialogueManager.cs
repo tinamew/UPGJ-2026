@@ -17,6 +17,14 @@ public class DialogueManager : MonoBehaviour
     TMP_Text nametag;
     TMP_Text message;
     List<string> tags;
+
+    // checks if the dialogue is active
+    public bool IsDialogueActive {get; private set;}
+
+    // emits that the dialogue had finished
+    public System.Action OnDialogueFinished;
+
+
    
     private void Awake()
     {
@@ -27,21 +35,20 @@ public class DialogueManager : MonoBehaviour
         }
 
         instance = this;
-        // optional: keep this alive across scenes
-        // DontDestroyOnLoad(gameObject);
+        // INIT HERE, not Start
+        story = new Story(inkFile.text);
+
+        nametag = textBox.transform.Find("Name")?.GetComponent<TMP_Text>();
+        message = textBox.transform.Find("Dialogue")?.GetComponent<TMP_Text>();
+
+        tags = new List<string>();
     }
 
-    private void Start()
-    {
-        story = new Story(inkFile.text);
-        nametag = textBox.transform.Find("Name").GetComponent<TMP_Text>();
-        message = textBox.transform.Find("Dialogue").GetComponent<TMP_Text>();
-        tags = new List<string>();
-     
-    }
 
     private void Update()
     {
+        if (!IsDialogueActive) return;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Is there more to the story?
@@ -57,10 +64,26 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void StartDialogue(string knotName)
+    {
+        Debug.Log("Start Dialogue with" + knotName);
+        story.ResetState();
+        story.ChoosePathString(knotName);
+
+        IsDialogueActive = true;
+        textBox.SetActive(true);
+        portraitImage.gameObject.SetActive(true);
+
+        AdvanceDialogue();
+    }
+
     // Finished the Story (Dialogue)
     private void FinishDialogue()
     {
-        Debug.Log("End of Dialogue!");
+        IsDialogueActive = false;
+        textBox.SetActive(false);
+        //portraitImage.gameObject.SetActive(false);
+        OnDialogueFinished?.Invoke();
     }
 
     // Advance through the story 
@@ -86,16 +109,20 @@ public class DialogueManager : MonoBehaviour
     // Chooses which knot to go through within the story
     public void ChooseDialogue(int currentLevel, float progress, int areaSelected)
     {
+        if (currentLevel == 0)
+        {
+            //play the intro 
+        }
         if (currentLevel == 1){
             switch(progress) 
                 {
-                case 25:
+                case 0:
                     // code block
                     break;
-                case 50:
+                case 33:
                     // code block
                     break;
-                case 75:
+                case 66:
                     break;
                 case 100:
                     break;
@@ -135,6 +162,7 @@ public class DialogueManager : MonoBehaviour
             string key = splitTag[0].Trim();
             Debug.Log(key);
             string param = splitTag[1].Trim();
+            Debug.Log(param);
 
             switch (key)
             {
