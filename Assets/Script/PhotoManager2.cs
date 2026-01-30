@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
+
 
 public class PhotoManager2 : MonoBehaviour
 {
@@ -23,6 +25,13 @@ public class PhotoManager2 : MonoBehaviour
 
     // manages the state of the photo
     public int photoProgress = 0;
+
+    // image dumb ass stuff
+    [SerializeField] private Image smallImage;
+    [SerializeField] private Image largeImage;
+
+    [SerializeField] private Sprite half_solved;
+    [SerializeField] private Sprite full_solved;
 
     private void Awake()
     {
@@ -63,9 +72,24 @@ public class PhotoManager2 : MonoBehaviour
 
     void UpdatePhotoProgress()
     {
-        //update the photo progress by 25
-        Debug.Log("Photoprogress is " + photoProgress);
-        photoProgress += 25; 
+        switch(photoProgress)
+        {
+            // first state
+            case 0:
+                smallImage.sprite = half_solved;
+                largeImage.sprite = half_solved;
+                photoProgress += 50;
+                break;
+            // second state / complete
+            case 50:
+                smallImage.sprite = full_solved;
+                largeImage.sprite = full_solved;
+                photoProgress += 50;
+                CompleteLevel();
+                break;
+            default:
+                break;
+        }
     }
 
     // new code, keep
@@ -92,12 +116,15 @@ public class PhotoManager2 : MonoBehaviour
             currentPuzzleFocused.largeDamageSprite.gameObject.SetActive(false);
             Debug.Log("Correct Selection!");
             UpdatePhotoProgress();
+            UIManager.instance.CloseSpells();
             return true;
         }
         else
         {
             retryNum--;
             UIManager.instance.ChangeRetries(retryNum);
+            UIManager.instance.ResetAnswerSlots(); // clears slots
+            FocusPuzzle(currentPuzzleFocused); // clears words
             Debug.Log("Incorrect! Tries left: " + retryNum);
 
             if (retryNum <= 0)

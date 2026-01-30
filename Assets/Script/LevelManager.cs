@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentLevel = 1;
+        //currentLevel = 1;
 
         // changes the level once it gets the signal from photo manager that it is complete
         PhotoManager1.OnLevelCompleted += AdvanceLevel;

@@ -92,12 +92,15 @@ public class PhotoManager3 : MonoBehaviour
             currentPuzzleFocused.largeDamageSprite.gameObject.SetActive(false);
             Debug.Log("Correct Selection!");
             UpdatePhotoProgress();
+            UIManager.instance.CloseSpells();
             return true;
         }
         else
         {
             retryNum--;
             UIManager.instance.ChangeRetries(retryNum);
+            UIManager.instance.ResetAnswerSlots(); // clears slots
+            FocusPuzzle(currentPuzzleFocused); // clears words
             Debug.Log("Incorrect! Tries left: " + retryNum);
 
             if (retryNum <= 0)
