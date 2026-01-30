@@ -28,6 +28,7 @@ I just wanted you to know that your father mentioned he has this book where he k
 # sprite: Elena_Smile
 it'll be very useful for you- so keep it close with you the entire time and make sure to thumb through it!
 
+# speaker: -
 # sprite: Lola_Blank
 Some time passes...
 
@@ -103,6 +104,7 @@ Make good with the family that’s still here.
 I’ll make sure to be a better mother this time. 
 Accept him wholeheartedly for who he is and the path he has chosen.
 
+# speaker: -
 # sprite: Lola_Blank
 Some time passes...
 
@@ -163,27 +165,11 @@ You left Isabella all alone... You left ME all alone.
 
 === thirdPhotoDialogue ===
 # speaker: Lola
-# sprite: Lola_Normal
-This was a photo of me and my kids back then...
-# sprite: Lola_Smiling
-They really were so cute! 
-# sprite: Lola_Awe
-The photo was ruined after I spilled coffee on it, silly me!
-Some of the photo must have turned moldy from that...
 # sprite: Lola_Angry
-The boy in the photo is Miguel, who dropped out of med school to join a band. 
-I told him jud to be a doctor and make money, pero he said he's not happy!
-Jusko lord. Dong. MONEY makes you happy.
-# sprite: Lola_Uneasy
-And the girl there is Maria... 
-# sprite: Lola_Sad
-She really threw it all away in the end.
+I CURSE THAT MAN. HE TOOK AWAY YOUR FUTURE! MY FUTURE!
+You had so many dreams. I never approved of him. 
+KUNG NAA KOY ISULTI, PAMINAW GUD!
 
--> DONE
-
-=== firstMistake ===
-Phew! That was a close one. My wrong incantation would have ruined the photo if I didn’t protect it with my ward… Still, that ward won’t last forever.
-(You get three tries per photo, and if you end up using up all those tries, the photo will be ruined and the customer will be upset)
 -> DONE
 
 

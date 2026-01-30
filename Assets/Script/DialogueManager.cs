@@ -81,8 +81,12 @@ public class DialogueManager : MonoBehaviour
     private void FinishDialogue()
     {
         IsDialogueActive = false;
-        textBox.SetActive(false);
-        portraitImage.gameObject.SetActive(false);
+        //textBox.SetActive(false);
+        //portraitImage.gameObject.SetActive(false);
+
+        // holy hard code
+
+ 
 
         OnDialogueFinished?.Invoke();
     }

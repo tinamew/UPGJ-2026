@@ -12711,8 +12711,8 @@ MonoBehaviour:
     portraits:
     - id: Lola_Angry
       sprite: {fileID: 21300000, guid: d31a820ce2f2bc645b6f9f34fe88d31f, type: 3}
-    - id: 
-      sprite: {fileID: 0}
+    - id: Lola_Awe
+      sprite: {fileID: 21300000, guid: 8c558e321a45a3646bd45b6bd2a09eca, type: 3}
     - id: Lola_Normal
       sprite: {fileID: 21300000, guid: befa989bc01365647bdbe88de9f0433c, type: 3}
     - id: Lola_Sad

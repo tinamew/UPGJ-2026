@@ -73,21 +73,29 @@ public class LevelManager : MonoBehaviour
     switch (currentLevel){
         case 1:
             Debug.Log("Activating Level 1");
-            PhotoLevel1.gameObject.SetActive(true);
-            PhotoManager1.gameObject.SetActive(true);
+            waitingForLevelDialogue = true;
+            PhotoLevel1.SetActive(true);
+            DialogueManager.instance.OnDialogueFinished += OnLevel1DialogueFinished;
+            DialogueManager.instance.StartDialogue("firstPhotoDialogue");
             break;
         case 2:
             Debug.Log("Activating Level 2");
-            PhotoLevel2.gameObject.SetActive(true);
-            PhotoManager2.gameObject.SetActive(true);
+            waitingForLevelDialogue = true;
+            PhotoLevel2.SetActive(true);
+            DialogueManager.instance.OnDialogueFinished += OnLevel2DialogueFinished;
+            DialogueManager.instance.StartDialogue("secondPhotoDialogue");
             break;
         case 3:
             Debug.Log("Activating Level 3");
-            PhotoLevel3.gameObject.SetActive(true);
-            PhotoManager3.gameObject.SetActive(true);
+            waitingForLevelDialogue = true;
+            PhotoLevel3.SetActive(true);
+            DialogueManager.instance.OnDialogueFinished += OnLevel3DialogueFinished;
+            DialogueManager.instance.StartDialogue("thirdPhotoDialogue");
             break;
         case 4:
             Debug.Log("All levels completed — triggering ending");
+            DialogueManager.instance.textBox.SetActive(false);
+            DialogueManager.instance.portraitImage.gameObject.SetActive(false);            
             TriggerEnding();
             break;
         default:
@@ -102,7 +110,6 @@ public class LevelManager : MonoBehaviour
         waitingForLevelDialogue = false;
 
         // Now activate the level
-        PhotoLevel1.SetActive(true);
         PhotoManager1.gameObject.SetActive(true);
     }
 
@@ -112,7 +119,7 @@ public class LevelManager : MonoBehaviour
         waitingForLevelDialogue = false;
 
         // Now activate the level
-        PhotoLevel2.SetActive(true);
+
         PhotoManager2.gameObject.SetActive(true);
     }
 
@@ -122,7 +129,7 @@ public class LevelManager : MonoBehaviour
         waitingForLevelDialogue = false;
 
         // Now activate the level
-        PhotoLevel3.SetActive(true);
+
         PhotoManager3.gameObject.SetActive(true);
     }
 
