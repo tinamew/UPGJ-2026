@@ -94,7 +94,6 @@ public class LevelManager : MonoBehaviour
             break;
         case 4:
             Debug.Log("All levels completed — triggering ending");
-            DialogueManager.instance.textBox.SetActive(false);
             DialogueManager.instance.portraitImage.gameObject.SetActive(false);            
             TriggerEnding();
             break;
