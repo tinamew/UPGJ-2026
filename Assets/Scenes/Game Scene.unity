@@ -7457,6 +7457,11 @@ MonoBehaviour:
   retryNum: 3
   currentPuzzleFocused: {fileID: 0}
   photoProgress: 0
+  smallImage: {fileID: 0}
+  largeImage: {fileID: 0}
+  half_solved: {fileID: 0}
+  full_solved: {fileID: 0}
+  photoLevel: {fileID: 0}
 --- !u!1 &443141784
 GameObject:
   m_ObjectHideFlags: 0
@@ -7777,6 +7782,9 @@ MonoBehaviour:
   PhotoManager1: {fileID: 690009956}
   PhotoManager2: {fileID: 434228338}
   PhotoManager3: {fileID: 925729081}
+  PhotoLevel1: {fileID: 0}
+  PhotoLevel2: {fileID: 0}
+  PhotoLevel3: {fileID: 0}
   currentLevel: 0
 --- !u!114 &471247883
 MonoBehaviour:
@@ -8796,6 +8804,7 @@ MonoBehaviour:
   retryNum: 3
   currentPuzzleFocused: {fileID: 0}
   photoProgress: 0
+  photoLevel: {fileID: 0}
 --- !u!1 &729896648
 GameObject:
   m_ObjectHideFlags: 0
@@ -9729,6 +9738,7 @@ MonoBehaviour:
   retryNum: 3
   currentPuzzleFocused: {fileID: 0}
   photoProgress: 0
+  photoLevel: {fileID: 0}
 --- !u!1 &930034838
 GameObject:
   m_ObjectHideFlags: 0
@@ -12043,7 +12053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1365729901
 RectTransform:
   m_ObjectHideFlags: 0
