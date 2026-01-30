@@ -6168,12 +6168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a809a6d43d41004f85e407bf40a83cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  photoAreas:
-  - {fileID: 11400000, guid: 174daef238ec55a4699b2bfd2d32a11c, type: 2}
-  - {fileID: 11400000, guid: 5b429c4bdce0a264dae6ee16f43693e2, type: 2}
-  wordPuzzle: {fileID: 471247883}
-  retryNum: 3
-  currentPhoto: {fileID: 0}
+  endingCutscene: {fileID: 0}
+  PhotoManager1: {fileID: 0}
+  PhotoManager2: {fileID: 0}
+  PhotoManager3: {fileID: 0}
+  currentLevel: 0
 --- !u!114 &471247883
 MonoBehaviour:
   m_ObjectHideFlags: 0
