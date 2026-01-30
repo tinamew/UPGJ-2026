@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd187bf5711a3734d8f80f8547461502, type: 3}
   m_Name: Curse
   m_EditorClassIdentifier: Assembly-CSharp::DamageType
-  typeName: 
+  typeName: Blackflame
+  typeObject: {fileID: 0}

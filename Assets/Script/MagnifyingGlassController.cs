@@ -63,7 +63,7 @@ public class MagnifyingGlassController : MonoBehaviour
         magnifyingGlass.anchoredPosition = targetPos;
     }
 
-    private void DisableMagnifyingGlass()
+    public void DisableMagnifyingGlass()
     {
         magnifyingGlass.gameObject.SetActive(false);
     }

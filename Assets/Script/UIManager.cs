@@ -77,6 +77,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ResetAnswerSlots()
+    {
+        answerSlot.ResetAllSlots();
+    }
+
     public bool SpellPanelState()
     {
         if (!spellPanel.gameObject.activeSelf)

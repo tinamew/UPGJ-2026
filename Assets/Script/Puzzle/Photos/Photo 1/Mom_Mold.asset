@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3eab12dae8be340addf89ad998a248, type: 3}
+  m_Name: Mom_Mold
+  m_EditorClassIdentifier: Assembly-CSharp::PhotoPuzzle
+  photoWord: Lola
+  requiredMethod: {fileID: 11400000, guid: 3c76df696c26e6d40b23f6dca972c0ac, type: 2}
+  requiredDamage: {fileID: 11400000, guid: 4e4ad3d648b3d6a41b9522889a350dc2, type: 2}
+  isResolved: 1
