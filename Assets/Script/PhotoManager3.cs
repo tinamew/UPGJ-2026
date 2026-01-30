@@ -34,6 +34,9 @@ public class PhotoManager3 : MonoBehaviour
 
     private void Awake()
     {
+
+        magnifyingGlass = photoLevel.GetComponentInChildren<MagnifyingGlassController>();
+        
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
