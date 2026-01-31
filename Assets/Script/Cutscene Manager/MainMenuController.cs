@@ -21,11 +21,6 @@ public class MainMenuController : MonoBehaviour
 
     public void OnQuitClicked()
     {
-        Debug.Log("Quit clicked!");
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+       Application.Quit();
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -95,7 +94,7 @@ public class UIManager : MonoBehaviour
         return false;
     }
 
-    private void PauseMenu()
+    public void PauseMenu()
     {
         if (!pausePanel.gameObject.activeSelf)
         {
@@ -135,5 +134,9 @@ public class UIManager : MonoBehaviour
         obj.SetActive(true);
     }
    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
 }
