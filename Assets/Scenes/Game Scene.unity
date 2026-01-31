@@ -850,18 +850,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
-        m_MethodName: SetFocusedPhoto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 546ffe8da022c5a478382b2e994c610d, type: 2}
-          m_ObjectArgumentAssemblyTypeName: PhotoPuzzle, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &75922428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6924,8 +6912,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166674314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -37.665}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -22.166}
+  m_LocalScale: {x: 1.4529604, y: 1.4529604, z: 1.4529604}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 900234187}
@@ -6933,7 +6921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60.528, y: 9.1463}
+  m_AnchoredPosition: {x: 88.606, y: 23.613}
   m_SizeDelta: {x: 132.9262, y: 150.13}
   m_Pivot: {x: 0.35, y: 0.69}
 --- !u!114 &166674316
@@ -7002,7 +6990,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168691519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9.6}
+  m_LocalPosition: {x: 0, y: 0, z: -7.599992}
   m_LocalScale: {x: 0.4444445, y: 0.44444454, z: 0.666761}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7010,7 +6998,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.8, y: -31.8}
+  m_AnchoredPosition: {x: 24.8, y: -38.20005}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &168691521
@@ -8301,8 +8289,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 165757345}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: SceneToLoad
-        m_Mode: 5
+        m_MethodName: QuitGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9000,7 +8988,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 49b592ba06fdf6b4fa4463a276d0527a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 98d79ffba2ec15f4db2dddb0afa5b23e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9498,6 +9486,7 @@ MonoBehaviour:
   PhotoManager1: {fileID: 690009956}
   PhotoManager2: {fileID: 434228338}
   PhotoManager3: {fileID: 925729081}
+  bgm: {fileID: 286822867}
   PhotoLevel1: {fileID: 1208155983}
   PhotoLevel2: {fileID: 2132246047}
   PhotoLevel3: {fileID: 1150523220}
@@ -9514,7 +9503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ea8954845654c46b9544bbf278685a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WordPuzzle
-  letterSlotPrefab: {fileID: 6295440048727403737, guid: 1b26784a967869d4993adb8510f2cd86, type: 3}
+  letterSlotPrefab: {fileID: 3276888308164006937, guid: 7fa43949e7a04c74c8deda5903f82cad, type: 3}
   slotsParent: {fileID: 1926381284}
   solved: 0
 --- !u!114 &471247884
@@ -11293,7 +11282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.1, y: 0.4}
+  m_AnchoredPosition: {x: -15.299552, y: 0.4}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &720052815
@@ -12622,7 +12611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.6, y: -5.9}
+  m_AnchoredPosition: {x: -6.8, y: -5.9}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893675133
@@ -13178,18 +13167,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 471247884}
-        m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
-        m_MethodName: SetFocusedPhoto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: d3b38b1f4c74fb04e98f338c7c01f837, type: 2}
-          m_ObjectArgumentAssemblyTypeName: PhotoPuzzle, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &917588320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13256,8 +13233,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924085438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -8.7928}
+  m_LocalScale: {x: 0.8057595, y: 0.8057595, z: 0.8057595}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 561357142}
@@ -13265,7 +13242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.46300507, y: 61.617004}
+  m_AnchoredPosition: {x: 8.2614, y: 68.457}
   m_SizeDelta: {x: 89.34601, y: 86.76599}
   m_Pivot: {x: 0, y: 0}
 --- !u!65 &924085440
@@ -14349,18 +14326,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
-        m_MethodName: SetFocusedPhoto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 999a1b82020095b4b98b258e528423e1, type: 2}
-          m_ObjectArgumentAssemblyTypeName: PhotoPuzzle, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1076167273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14871,7 +14836,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1150523220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfad75a29a619aa41b07674e3072b6ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d7cfbcc432a7bd41a21b63afcbafd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpotSelected
 --- !u!1 &1164025895
@@ -15850,7 +15815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 49b592ba06fdf6b4fa4463a276d0527a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 98d79ffba2ec15f4db2dddb0afa5b23e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16508,7 +16473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1383607850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16544,7 +16509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.24528301, g: 0.11543825, b: 0.080989644, a: 0.9490196}
+  m_Color: {r: 0.15471691, g: 0.067989245, b: 0.047582734, a: 0.9490196}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16597,7 +16562,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384056861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11.3}
+  m_LocalPosition: {x: 0, y: 0, z: -9.3}
   m_LocalScale: {x: 0.4444445, y: 0.44444454, z: 0.666761}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16605,7 +16570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23.8, y: -26.2}
+  m_AnchoredPosition: {x: 23.8, y: -32.6}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1384056863
@@ -17783,7 +17748,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 471247884}
         m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
         m_MethodName: SetFocusedPhoto
         m_Mode: 2
@@ -18605,7 +18570,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741448410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -16.1}
+  m_LocalPosition: {x: 0, y: 0, z: -17.62}
   m_LocalScale: {x: 1, y: 1, z: 1.0001413}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18613,8 +18578,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: 49.8}
-  m_SizeDelta: {x: 150, y: 125}
+  m_AnchoredPosition: {x: -33.91, y: 57.31}
+  m_SizeDelta: {x: 132.19, y: 109.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1741448412
 MonoBehaviour:
@@ -18686,7 +18651,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 471247884}
         m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
         m_MethodName: SetFocusedPhoto
         m_Mode: 2
@@ -18840,18 +18805,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1755744886}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
-        m_MethodName: SetFocusedPhoto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: d3b38b1f4c74fb04e98f338c7c01f837, type: 2}
-          m_ObjectArgumentAssemblyTypeName: PhotoPuzzle, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19132,18 +19085,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1788385502}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 471247884}
-        m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
-        m_MethodName: SetFocusedPhoto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 999a1b82020095b4b98b258e528423e1, type: 2}
-          m_ObjectArgumentAssemblyTypeName: PhotoPuzzle, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19445,7 +19386,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799294591}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9.6}
+  m_LocalPosition: {x: 0, y: 0, z: -7.57}
   m_LocalScale: {x: 1, y: 1, z: 1.0001413}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19453,8 +19394,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.8, y: -79.8}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 3.56, y: -89.79}
+  m_SizeDelta: {x: 189.27, y: 79.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1799294593
 MonoBehaviour:
@@ -19526,7 +19467,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 471247884}
         m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
         m_MethodName: SetFocusedPhoto
         m_Mode: 2
@@ -21161,18 +21102,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpotSelected, Assembly-CSharp
-        m_MethodName: SetFocusedPhoto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 546ffe8da022c5a478382b2e994c610d, type: 2}
-          m_ObjectArgumentAssemblyTypeName: PhotoPuzzle, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2071543703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21330,8 +21259,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100732271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -7.2856}
+  m_LocalScale: {x: 0.8394696, y: 0.8394696, z: 0.8394696}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 703556728}
@@ -21339,7 +21268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.46300507, y: 61.617004}
+  m_AnchoredPosition: {x: 6.5, y: 67.524}
   m_SizeDelta: {x: 89.34601, y: 86.76599}
   m_Pivot: {x: 0, y: 0}
 --- !u!65 &2100732273
@@ -21570,7 +21499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2132246048
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21579,8 +21508,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132246047}
   m_LocalRotation: {x: 0.099934176, y: -0, z: -0, w: 0.9949941}
-  m_LocalPosition: {x: 0, y: 0, z: 8.85}
-  m_LocalScale: {x: 0.02637, y: 0.026370008, z: 0.026370008}
+  m_LocalPosition: {x: 0, y: 0, z: 8.8021}
+  m_LocalScale: {x: 0.025810692, y: 0.0258107, z: 0.0258107}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2145054267}
@@ -21589,7 +21518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 11.471, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -960.16974, y: -539.44965}
+  m_AnchoredPosition: {x: -960.17, y: -539.46}
   m_SizeDelta: {x: 350, y: 222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2132246049
@@ -21618,7 +21547,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2132246047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfad75a29a619aa41b07674e3072b6ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d7cfbcc432a7bd41a21b63afcbafd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpotSelected
 --- !u!1 &2134618208

@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     public PhotoManager1 PhotoManager1;
     public PhotoManager2 PhotoManager2;
     public PhotoManager3 PhotoManager3;
+    public AudioSource bgm;
 
     public GameObject PhotoLevel1;
     public GameObject PhotoLevel2;
@@ -156,6 +157,7 @@ public class LevelManager : MonoBehaviour
         if (endingCutscene != null)
         {
             endingCutscene.SetActive(true);
+            bgm.Stop();
         }
 
         // Optional: lock progression
